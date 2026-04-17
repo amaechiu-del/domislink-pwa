@@ -1,6 +1,6 @@
 import { Router } from 'express'
 import { generateCurriculumFast } from '../curriculum/generator.js'
-import { sanitizeLesson, validateLesson } from '../../../../lib/index.js'
+import { sanitizeLesson, validateLesson } from '../validators.js'
 import pb, { ensureAuth } from '../pb.js'
 
 const router = Router()

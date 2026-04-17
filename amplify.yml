@@ -1,10 +1,10 @@
 version: 1
 applications:
-  - frontend:
+  - appRoot: apps/web
+    frontend:
       phases:
         preBuild:
           commands:
-            - cd apps/web
             - npm install
         build:
           commands:
@@ -13,13 +13,9 @@ applications:
           commands:
             - echo "Frontend build complete"
       artifacts:
-        baseDirectory: apps/web/dist
+        baseDirectory: dist
         files:
           - "**/*"
       cache:
         paths:
-          - apps/web/node_modules/**/*
-      environment:
-        variables:
-          VITE_API_URL: ""  # Set to your Elastic Beanstalk URL in Amplify console
-    appRoot: .
+          - node_modules/**/*

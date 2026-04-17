@@ -1,0 +1,48 @@
+name: Deploy API → Elastic Beanstalk
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "apps/api/**"
+      - ".github/workflows/deploy-api.yml"
+
+jobs:
+  deploy:
+    name: Deploy to Elastic Beanstalk
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install API dependencies
+        working-directory: apps/api
+        run: npm install --omit=dev
+
+      - name: Create deployment package
+        # Zip from apps/api — all files including .ebextensions and Procfile
+        run: |
+          cd apps/api
+          zip -r ../../api-deploy.zip . \
+            -x "*.git*" \
+            -x ".env" \
+            -x ".env.*" \
+            -x "!.env.example"
+
+      - name: Deploy to Elastic Beanstalk
+        uses: einaregilsson/beanstalk-deploy@v22
+        with:
+          aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          application_name: domislink-api          # EB Application name (create in AWS console)
+          environment_name: domislink-api-env       # EB Environment name
+          region: ${{ secrets.AWS_REGION }}         # e.g. us-east-1
+          version_label: "v${{ github.run_number }}-${{ github.sha }}"
+          deployment_package: api-deploy.zip
+          wait_for_environment_recovery: 60

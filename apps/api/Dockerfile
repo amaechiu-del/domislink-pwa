@@ -2,13 +2,11 @@ FROM node:20-alpine
 
 WORKDIR /app
 
-# Copy package files
+# Copy package manifest and install production dependencies
 COPY package.json ./
-
-# Install production dependencies only
 RUN npm install --omit=dev
 
-# Copy source
+# Copy application source (validators.js is included under src/)
 COPY src/ ./src/
 
 # Expose port (Elastic Beanstalk uses PORT env var, default 8080)
