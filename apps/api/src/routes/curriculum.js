@@ -1,5 +1,6 @@
 import { Router } from 'express'
 import { generateCurriculumFast } from '../curriculum/generator.js'
+import { sanitizeLesson, validateLesson } from '../../../../lib/index.js'
 import pb, { ensureAuth } from '../pb.js'
 
 const router = Router()
@@ -14,9 +15,16 @@ router.post('/generate', async (req, res) => {
     console.log(`[curriculum/generate] Generated ${lessons.length} lessons, saving…`)
 
     const results = await Promise.allSettled(
-      lessons.map((lesson) =>
-        pb.collection('lessons').create(lesson).then(() => { created++ })
-      )
+      lessons.map((lesson) => {
+        const { valid, missing } = validateLesson(lesson)
+        if (!valid) {
+          console.warn(`[curriculum/generate] Skipping lesson missing fields: ${missing.join(', ')}`)
+          errors++
+          return Promise.resolve()
+        }
+        const clean = sanitizeLesson(lesson)
+        return pb.collection('lessons').create(clean).then(() => { created++ })
+      })
     )
 
     results.forEach((r, i) => {

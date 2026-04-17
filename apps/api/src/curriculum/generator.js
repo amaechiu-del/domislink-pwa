@@ -179,12 +179,16 @@ ${topic} in ${subject} is examinable and carries significant weight in the WAEC 
 
 function buildLesson(topicEntry, topicName) {
   const { subject, class: cls } = topicEntry
+  const content = buildContent(topicName, subject, cls)
   return {
     title: `${topicName} — ${subject}`,
     class: cls,
     subject,
     topic: topicName,
-    content: buildContent(topicName, subject, cls),
+    content,
+    content_multilingual: {
+      en: content,
+    },
     quiz: buildQuiz(topicName, subject),
   }
 }

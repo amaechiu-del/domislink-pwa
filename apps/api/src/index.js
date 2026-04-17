@@ -7,10 +7,16 @@ import curriculumRouter from './routes/curriculum.js'
 const app = express()
 const PORT = process.env.PORT || 3001
 
-app.use(cors())
+// CORS — restrict by origin in production if CORS_ORIGIN is set
+const corsOptions = process.env.CORS_ORIGIN
+  ? { origin: process.env.CORS_ORIGIN.split(',').map((o) => o.trim()) }
+  : {}
+app.use(cors(corsOptions))
 app.use(express.json())
 
-app.get('/health', (_req, res) => res.json({ status: 'ok' }))
+const healthHandler = (_req, res) => res.json({ status: 'ok', timestamp: new Date().toISOString() })
+app.get('/health', healthHandler)
+app.get('/api/health', healthHandler)
 app.use('/api/lessons', lessonsRouter)
 app.use('/api/curriculum', curriculumRouter)
 
