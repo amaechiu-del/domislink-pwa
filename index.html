@@ -3,13 +3,1137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DomisLink Webstore</title>
-    <meta name="description" content="DomisLink Webstore homepage">
+    <meta name="theme-color" content="#EEFF00">
+    <meta name="description" content="TeachMaster - Nigeria's #1 WAEC, NECO, JAMB Prep Platform">
+    <title>TeachMaster - WAEC, NECO, JAMB Excellence</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23EEFF00' width='100' height='100' rx='20'/><text x='50' y='65' font-size='50' text-anchor='middle' fill='%23000'>T</text></svg>">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #EEFF00;
+            --dark: #0a0e27;
+            --darker: #050810;
+            --success: #10B981;
+            --warning: #F59E0B;
+            --danger: #EF4444;
+            --info: #3B82F6;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: var(--dark);
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        /* HEADER */
+        .header {
+            background: var(--darker);
+            padding: 1rem;
+            border-bottom: 2px solid var(--primary);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .xp-badge {
+            background: var(--primary);
+            color: var(--dark);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .streak-badge {
+            background: var(--warning);
+            color: var(--dark);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        /* NAVIGATION TABS */
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 1rem;
+            background: var(--darker);
+            flex-wrap: wrap;
+        }
+
+        .nav-tab {
+            background: transparent;
+            border: 2px solid #333;
+            color: #888;
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .nav-tab:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .nav-tab.active {
+            background: var(--primary);
+            color: var(--dark);
+            border-color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* MAIN CONTENT */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        /* SECTIONS */
+        .section {
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        /* DASHBOARD */
+        .dashboard-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #1a1f3a 0%, #0a0e27 100%);
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid #333;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .stat-label {
+            color: #888;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+        }
+
+        /* SUBJECT CARDS */
+        .subjects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .subject-card {
+            background: linear-gradient(135deg, #1a1f3a 0%, #0a0e27 100%);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid #333;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .subject-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(238, 255, 0, 0.1);
+        }
+
+        .subject-header {
+            background: var(--primary);
+            color: var(--dark);
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .subject-icon {
+            font-size: 2rem;
+        }
+
+        .subject-exam {
+            font-size: 0.75rem;
+            background: var(--dark);
+            color: var(--primary);
+            padding: 0.2rem 0.5rem;
+            border-radius: 10px;
+        }
+
+        .subject-body {
+            padding: 1.5rem;
+        }
+
+        .subject-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .subject-topics {
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .progress-bar {
+            background: #333;
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-fill {
+            background: var(--primary);
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.5s;
+        }
+
+        .progress-text {
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        .subject-actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        /* BUTTONS */
+        .btn {
+            padding: 0.7rem 1.2rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            flex: 1;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--dark);
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(238, 255, 0, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: var(--dark);
+        }
+
+        .btn-success {
+            background: var(--success);
+            color: white;
+        }
+
+        .btn-danger {
+            background: var(--danger);
+            color: white;
+        }
+
+        /* QUIZ SECTION */
+        .quiz-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .quiz-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: var(--darker);
+            border-radius: 10px;
+        }
+
+        .quiz-progress {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .timer {
+            background: var(--warning);
+            color: var(--dark);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        .question-card {
+            background: linear-gradient(135deg, #1a1f3a 0%, #0a0e27 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid #333;
+            margin-bottom: 1rem;
+        }
+
+        .question-number {
+            color: var(--primary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .question-text {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .options-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .option-btn {
+            background: var(--darker);
+            border: 2px solid #333;
+            color: #fff;
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: left;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .option-btn:hover {
+            border-color: var(--primary);
+            background: rgba(238, 255, 0, 0.1);
+        }
+
+        .option-btn.selected {
+            border-color: var(--primary);
+            background: rgba(238, 255, 0, 0.2);
+        }
+
+        .option-btn.correct {
+            border-color: var(--success);
+            background: rgba(16, 185, 129, 0.2);
+        }
+
+        .option-btn.wrong {
+            border-color: var(--danger);
+            background: rgba(239, 68, 68, 0.2);
+        }
+
+        /* FLASHCARDS */
+        .flashcard-container {
+            max-width: 600px;
+            margin: 0 auto;
+            perspective: 1000px;
+        }
+
+        .flashcard {
+            width: 100%;
+            height: 300px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+            cursor: pointer;
+        }
+
+        .flashcard.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .flashcard-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 1.3rem;
+            line-height: 1.6;
+        }
+
+        .flashcard-front {
+            background: linear-gradient(135deg, var(--primary) 0%, #ccdd00 100%);
+            color: var(--dark);
+        }
+
+        .flashcard-back {
+            background: linear-gradient(135deg, #1a1f3a 0%, #0a0e27 100%);
+            color: #fff;
+            transform: rotateY(180deg);
+            border: 2px solid var(--primary);
+        }
+
+        .flashcard-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .flashcard-counter {
+            text-align: center;
+            margin-top: 1rem;
+            color: #888;
+        }
+
+        /* LEADERBOARD */
+        .leaderboard-list {
+            background: linear-gradient(135deg, #1a1f3a 0%, #0a0e27 100%);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid #333;
+        }
+
+        .leaderboard-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #333;
+        }
+
+        .leaderboard-item:last-child {
+            border-bottom: none;
+        }
+
+        .leaderboard-rank {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 1rem;
+        }
+
+        .rank-1 { background: gold; color: #000; }
+        .rank-2 { background: silver; color: #000; }
+        .rank-3 { background: #cd7f32; color: #000; }
+        .rank-default { background: #333; color: #fff; }
+
+        .leaderboard-name {
+            flex: 1;
+        }
+
+        .leaderboard-xp {
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* PROFILE/RESULTS */
+        .results-card {
+            background: linear-gradient(135deg, #1a1f3a 0%, #0a0e27 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid #333;
+            text-align: center;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .results-score {
+            font-size: 4rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin: 1rem 0;
+        }
+
+        .results-grade {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .results-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .result-item {
+            background: var(--darker);
+            padding: 1rem;
+            border-radius: 10px;
+        }
+
+        .result-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .result-label {
+            font-size: 0.85rem;
+            color: #888;
+        }
+
+        /* SUBSCRIPTION BANNER */
+        .subscription-banner {
+            background: linear-gradient(135deg, var(--primary) 0%, #ccdd00 100%);
+            color: var(--dark);
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .subscription-text h3 {
+            margin-bottom: 0.3rem;
+        }
+
+        /* MODAL */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            padding: 1rem;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal {
+            background: var(--dark);
+            border: 2px solid var(--primary);
+            border-radius: 20px;
+            padding: 2rem;
+            max-width: 500px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-title {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            color: #888;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #888;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #333;
+            border-radius: 8px;
+            background: var(--darker);
+            color: #fff;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        /* ACHIEVEMENT POPUP */
+        .achievement-popup {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--primary) 0%, #ccdd00 100%);
+            color: var(--dark);
+            padding: 1rem 1.5rem;
+            border-radius: 15px;
+            display: none;
+            align-items: center;
+            gap: 1rem;
+            z-index: 1001;
+            animation: slideIn 0.5s ease;
+        }
+
+        .achievement-popup.show {
+            display: flex;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        .achievement-icon {
+            font-size: 2rem;
+        }
+
+        /* ADMIN SECTION */
+        .admin-panel {
+            background: linear-gradient(135deg, #1a1f3a 0%, #0a0e27 100%);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 2px solid var(--warning);
+        }
+
+        .admin-title {
+            color: var(--warning);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .admin-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .admin-stat {
+            background: var(--darker);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .admin-stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--warning);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-tabs {
+                overflow-x: auto;
+                justify-content: flex-start;
+                padding: 1rem 0.5rem;
+            }
+
+            .nav-tab {
+                white-space: nowrap;
+            }
+
+            .dashboard-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .subjects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .subscription-banner {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* LOADING SPINNER */
+        .loading {
+            display: flex;
+            justify-content: center;
+            padding: 3rem;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid #333;
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* TOAST */
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--success);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            display: none;
+            z-index: 1002;
+        }
+
+        .toast.show {
+            display: block;
+            animation: fadeInUp 0.5s ease;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translate(-50%, 20px); }
+            to { opacity: 1; transform: translate(-50%, 0); }
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to DomisLink Webstore</h1>
-    <p>Explore our tools for education and productivity.</p>
-    <p><a href="appstore-landing.html">Go to App Store Landing Page</a></p>
-    <p><a href="wasc-quiz.html">Open WASC Quiz</a></p>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">📚 TeachMaster</div>
+            <div class="user-info">
+                <span class="xp-badge" id="userXP">0 XP</span>
+                <span class="streak-badge" id="userStreak">🔥 0 Days</span>
+                <button class="btn btn-secondary" id="loginBtn" onclick="showModal('authModal')">Login</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav class="nav-tabs">
+        <button class="nav-tab active" data-section="dashboard">🏠 Dashboard</button>
+        <button class="nav-tab" data-section="subjects">📖 Subjects</button>
+        <button class="nav-tab" data-section="quiz">📝 Quiz</button>
+        <button class="nav-tab" data-section="flashcards">🧠 Flashcards</button>
+        <button class="nav-tab" data-section="leaderboard">🏆 Leaderboard</button>
+        <button class="nav-tab" data-section="profile">👤 Profile</button>
+        <button class="nav-tab" data-section="admin" id="adminTab" style="display:none;">⚙️ Admin</button>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        <!-- DASHBOARD SECTION -->
+        <section id="dashboard" class="section active">
+            <div class="subscription-banner" id="subscriptionBanner">
+                <div class="subscription-text">
+                    <h3>🎓 Unlock All Subjects!</h3>
+                    <p>Get unlimited access to WAEC, NECO & JAMB prep</p>
+                </div>
+                <button class="btn btn-primary" onclick="showModal('subscribeModal')">Subscribe Now - ₦2,000/month</button>
+            </div>
+
+            <h2 style="margin-bottom: 1.5rem;">📊 Your Progress</h2>
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <div class="stat-value" id="totalXP">0</div>
+                    <div class="stat-label">Total XP</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="quizzesTaken">0</div>
+                    <div class="stat-label">Quizzes Taken</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="avgScore">0%</div>
+                    <div class="stat-label">Avg Score</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="streak">0</div>
+                    <div class="stat-label">Day Streak 🔥</div>
+                </div>
+            </div>
+
+            <h3 style="margin-bottom: 1rem;">📚 Continue Learning</h3>
+            <div class="subjects-grid" id="dashboardSubjects"></div>
+        </section>
+
+        <!-- SUBJECTS SECTION -->
+        <section id="subjects" class="section">
+            <h2 style="margin-bottom: 1.5rem;">📖 All Subjects</h2>
+            
+            <div style="margin-bottom: 1.5rem;">
+                <select id="examFilter" style="padding: 0.8rem; border-radius: 8px; background: var(--darker); color: #fff; border: 2px solid #333;">
+                    <option value="all">All Exams</option>
+                    <option value="WAEC">WAEC</option>
+                    <option value="NECO">NECO</option>
+                    <option value="JAMB">JAMB</option>
+                </select>
+            </div>
+
+            <div class="subjects-grid" id="subjectsList"></div>
+        </section>
+
+        <!-- QUIZ SECTION -->
+        <section id="quiz" class="section">
+            <div class="quiz-container">
+                <div id="quizStart">
+                    <h2 style="margin-bottom: 1.5rem;">📝 Take a Quiz</h2>
+                    <p style="color: #888; margin-bottom: 2rem;">Select a subject to start your quiz</p>
+                    
+                    <div class="form-group">
+                        <label>Select Subject</label>
+                        <select id="quizSubject">
+                            <option value="">Choose a subject...</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Number of Questions</label>
+                        <select id="quizCount">
+                            <option value="5">5 Questions (Quick)</option>
+                            <option value="10" selected>10 Questions</option>
+                            <option value="20">20 Questions</option>
+                        </select>
+                    </div>
+                    
+                    <button class="btn btn-primary" onclick="startQuiz()" style="width: 100%;">Start Quiz 🚀</button>
+                </div>
+
+                <div id="quizActive" style="display: none;">
+                    <div class="quiz-header">
+                        <div class="quiz-progress">
+                            <span>Question <span id="currentQ">1</span>/<span id="totalQ">10</span></span>
+                        </div>
+                        <div class="timer" id="quizTimer">⏱️ 10:00</div>
+                    </div>
+                    
+                    <div class="question-card">
+                        <div class="question-number" id="qSubject">Mathematics</div>
+                        <div class="question-text" id="questionText">Loading question...</div>
+                        <div class="options-list" id="optionsList"></div>
+                    </div>
+                    
+                    <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                        <button class="btn btn-secondary" onclick="skipQuestion()">Skip</button>
+                        <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()" disabled>Next →</button>
+                    </div>
+                </div>
+
+                <div id="quizResults" style="display: none;">
+                    <div class="results-card">
+                        <h2>🎉 Quiz Complete!</h2>
+                        <div class="results-score" id="finalScore">0%</div>
+                        <div class="results-grade" id="finalGrade">Grade: A</div>
+                        
+                        <div class="results-details">
+                            <div class="result-item">
+                                <div class="result-value" id="correctCount">0</div>
+                                <div class="result-label">Correct</div>
+                            </div>
+                            <div class="result-item">
+                                <div class="result-value" id="wrongCount">0</div>
+                                <div class="result-label">Wrong</div>
+                            </div>
+                            <div class="result-item">
+                                <div class="result-value" id="xpEarned">+0</div>
+                                <div class="result-label">XP Earned</div>
+                            </div>
+                            <div class="result-item">
+                                <div class="result-value" id="timeTaken">0:00</div>
+                                <div class="result-label">Time</div>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-primary" onclick="resetQuiz()" style="width: 100%;">Try Again</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FLASHCARDS SECTION -->
+        <section id="flashcards" class="section">
+            <h2 style="margin-bottom: 1.5rem; text-align: center;">🧠 Flashcards</h2>
+            
+            <div class="form-group" style="max-width: 400px; margin: 0 auto 2rem;">
+                <select id="flashcardSubject" onchange="loadFlashcards()">
+                    <option value="">Select Subject</option>
+                </select>
+            </div>
+            
+            <div class="flashcard-container">
+                <div class="flashcard" id="flashcard" onclick="flipCard()">
+                    <div class="flashcard-face flashcard-front" id="cardFront">
+                        Select a subject to start
+                    </div>
+                    <div class="flashcard-face flashcard-back" id="cardBack">
+                        Answer will appear here
+                    </div>
+                </div>
+                
+                <div class="flashcard-controls">
+                    <button class="btn btn-danger" onclick="markCard('hard')">😓 Hard</button>
+                    <button class="btn btn-warning" style="background: var(--warning);" onclick="markCard('medium')">🤔 Medium</button>
+                    <button class="btn btn-success" onclick="markCard('easy')">😊 Easy</button>
+                </div>
+                
+                <div class="flashcard-counter">
+                    Card <span id="cardIndex">0</span> of <span id="totalCards">0</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- LEADERBOARD SECTION -->
+        <section id="leaderboard" class="section">
+            <h2 style="margin-bottom: 1.5rem;">🏆 Top Students This Week</h2>
+            
+            <div class="leaderboard-list" id="leaderboardList">
+                <div class="loading"><div class="spinner"></div></div>
+            </div>
+        </section>
+
+        <!-- PROFILE SECTION -->
+        <section id="profile" class="section">
+            <div class="results-card">
+                <div style="font-size: 4rem; margin-bottom: 1rem;">👤</div>
+                <h2 id="profileName">Guest User</h2>
+                <p style="color: #888; margin-bottom: 2rem;" id="profileEmail">Login to save your progress</p>
+                
+                <div class="results-details">
+                    <div class="result-item">
+                        <div class="result-value" id="profileXP">0</div>
+                        <div class="result-label">Total XP</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-value" id="profileQuizzes">0</div>
+                        <div class="result-label">Quizzes</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-value" id="profileStreak">0</div>
+                        <div class="result-label">Day Streak</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-value" id="profileBadges">0</div>
+                        <div class="result-label">Badges</div>
+                    </div>
+                </div>
+                
+                <button class="btn btn-primary" onclick="showModal('authModal')" style="width: 100%; margin-top: 1rem;" id="profileLoginBtn">Login / Sign Up</button>
+                <button class="btn btn-danger" onclick="logout()" style="width: 100%; margin-top: 0.5rem; display: none;" id="logoutBtn">Logout</button>
+            </div>
+        </section>
+
+        <!-- ADMIN SECTION -->
+        <section id="admin" class="section">
+            <div class="admin-panel">
+                <h2 class="admin-title">⚙️ Admin Panel</h2>
+                
+                <div class="admin-grid">
+                    <div class="admin-stat">
+                        <div class="admin-stat-value" id="adminUsers">0</div>
+                        <div class="stat-label">Total Users</div>
+                    </div>
+                    <div class="admin-stat">
+                        <div class="admin-stat-value" id="adminSubscribers">0</div>
+                        <div class="stat-label">Subscribers</div>
+                    </div>
+                    <div class="admin-stat">
+                        <div class="admin-stat-value" id="adminQuizzes">0</div>
+                        <div class="stat-label">Quizzes Taken</div>
+                    </div>
+                    <div class="admin-stat">
+                        <div class="admin-stat-value" id="adminRevenue">₦0</div>
+                        <div class="stat-label">Revenue</div>
+                    </div>
+                </div>
+                
+                <h3 style="margin: 2rem 0 1rem; color: var(--warning);">Quick Actions</h3>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <button class="btn btn-primary" onclick="showModal('addQuestionModal')">➕ Add Question</button>
+                    <button class="btn btn-secondary" onclick="showModal('addSubjectModal')">📚 Add Subject</button>
+                    <button class="btn btn-secondary" onclick="exportData()">📊 Export Data</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- AUTH MODAL -->
+    <div class="modal-overlay" id="authModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 class="modal-title">🔐 Login / Sign Up</h3>
+                <button class="modal-close" onclick="closeModal('authModal')">&times;</button>
+            </div>
+            
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="authEmail" placeholder="your@email.com">
+            </div>
+            
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="authPassword" placeholder="Your password">
+            </div>
+            
+            <div class="form-group" id="nameGroup" style="display: none;">
+                <label>Full Name</label>
+                <input type="text" id="authName" placeholder="Your full name">
+            </div>
+            
+            <button class="btn btn-primary" onclick="handleAuth()" style="width: 100%;" id="authSubmitBtn">Login</button>
+            
+            <p style="text-align: center; margin-top: 1rem; color: #888;">
+                <span id="authToggleText">Don't have an account?</span>
+                <a href="#" style="color: var(--primary);" onclick="toggleAuthMode()">Sign Up</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- SUBSCRIBE MODAL -->
+    <div class="modal-overlay" id="subscribeModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 class="modal-title">🎓 Subscribe to TeachMaster</h3>
+                <button class="modal-close" onclick="closeModal('subscribeModal')">&times;</button>
+            </div>
+            
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">📚</div>
+                <h3>Unlock Everything!</h3>
+                <p style="color: #888;">Access all subjects, unlimited quizzes, and premium features</p>
+            </div>
+            
+            <div class="form-group">
+                <label>Select Plan</label>
+                <select id="subPlan">
+                    <option value="monthly">Monthly - ₦2,000/month</option>
+                    <option value="termly">Termly - ₦5,000/term (Save 17%)</option>
+                    <option value="yearly">Yearly - ₦15,000/year (Save 37%)</option>
+                    <option value="school">School Bulk - Contact for pricing</option>
+                </select>
+            </div>
+            
+            <button class="btn btn-primary" onclick="processSubscription()" style="width: 100%;">Subscribe Now 🚀</button>
+            
+            <p style="text-align: center; margin-top: 1rem; color: #888; font-size: 0.85rem;">
+                Secure payment via Paystack. Cancel anytime.
+            </p>
+        </div>
+    </div>
+
+    <!-- ADD QUESTION MODAL (Admin) -->
+    <div class="modal-overlay" id="addQuestionModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 class="modal-title">➕ Add Question</h3>
+                <button class="modal-close" onclick="closeModal('addQuestionModal')">&times;</button>
+            </div>
+            
+            <div class="form-group">
+                <label>Subject</label>
+                <select id="newQSubject"></select>
+            </div>
+            
+            <div class="form-group">
+                <label>Question</label>
+                <input type="text" id="newQText" placeholder="Enter question...">
+            </div>
+            
+            <div class="form-group">
+                <label>Option A (Correct Answer)</label>
+                <input type="text" id="newQA" placeholder="Correct answer">
+            </div>
+            
+            <div class="form-group">
+                <label>Option B</label>
+                <input type="text" id="newQB" placeholder="Wrong answer">
+            </div>
+            
+            <div class="form-group">
+                <label>Option C</label>
+                <input type="text" id="newQC" placeholder="Wrong answer">
+            </div>
+            
+            <div class="form-group">
+                <label>Option D</label>
+                <input type="text" id="newQD" placeholder="Wrong answer">
+            </div>
+            
+            <button class="btn btn-primary" onclick="addQuestion()" style="width: 100%;">Add Question</button>
+        </div>
+    </div>
+
+    <!-- ACHIEVEMENT POPUP -->
+    <div class="achievement-popup" id="achievementPopup">
+        <div class="achievement-icon">🏆</div>
+        <div>
+            <strong id="achievementTitle">Achievement Unlocked!</strong>
+            <p id="achievementDesc" style="font-size: 0.9rem;">You earned a badge</p>
+        </div>
+    </div>
+
+    <!-- TOAST -->
+    <div class="toast" id="toast">Message here</div>
+
+    <!-- JAVASCRIPT -->
+    <script src="app.js"></script>
 </body>
 </html>
