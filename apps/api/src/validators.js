@@ -11,7 +11,7 @@ export const OPTIONAL_LESSON_FIELDS = ['subtopic', 'content_multilingual']
  * Returns { valid: boolean, missing: string[] }
  */
 export function validateLesson(lesson) {
-  const missing = LESSON_FIELDS.filter((f) => !lesson[f])
+  const missing = LESSON_FIELDS.filter((f) => lesson[f] == null)
   return { valid: missing.length === 0, missing }
 }
 
