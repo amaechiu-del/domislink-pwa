@@ -1,0 +1,66 @@
+[
+  {
+    "name": "lessons",
+    "type": "base",
+    "system": false,
+    "schema": [
+      {
+        "name": "title",
+        "type": "text",
+        "required": true,
+        "options": { "min": null, "max": null, "pattern": "" }
+      },
+      {
+        "name": "class",
+        "type": "text",
+        "required": true,
+        "options": { "min": null, "max": null, "pattern": "" }
+      },
+      {
+        "name": "subject",
+        "type": "text",
+        "required": true,
+        "options": { "min": null, "max": null, "pattern": "" }
+      },
+      {
+        "name": "topic",
+        "type": "text",
+        "required": true,
+        "options": { "min": null, "max": null, "pattern": "" }
+      },
+      {
+        "name": "subtopic",
+        "type": "text",
+        "required": false,
+        "options": { "min": null, "max": null, "pattern": "" }
+      },
+      {
+        "name": "content",
+        "type": "text",
+        "required": true,
+        "options": { "min": null, "max": null, "pattern": "" }
+      },
+      {
+        "name": "content_multilingual",
+        "type": "json",
+        "required": false,
+        "options": {}
+      },
+      {
+        "name": "quiz",
+        "type": "json",
+        "required": false,
+        "options": {}
+      }
+    ],
+    "listRule": "",
+    "viewRule": "",
+    "createRule": "",
+    "updateRule": "",
+    "deleteRule": null,
+    "indexes": [
+      "CREATE INDEX idx_lessons_subject ON lessons (subject)",
+      "CREATE INDEX idx_lessons_class ON lessons (class)"
+    ]
+  }
+]
