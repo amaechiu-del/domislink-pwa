@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-title" content="DomisLink Pro"/>
+<meta name="theme-color" content="#080c08"/>
+<title>DomisLink Pro — Exam Prep + AI Tutor + Earn Money</title>
+<script src="https://js.paystack.co/v1/inline.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.2/babel.min.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;overflow:hidden}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#080c08;color:#fff;overscroll-behavior:none}
+#root{height:100%;display:flex;flex-direction:column}
+textarea,input,button{font-family:inherit;-webkit-appearance:none}
+input{font-size:16px!important}
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-thumb{background:rgba(245,200,66,0.4);border-radius:4px}
+button{cursor:pointer;border:none}
+button:active{opacity:0.82}
+.viral-prompt{position:fixed;bottom:0;left:0;right:0;background:linear-gradient(180deg,rgba(245,200,66,0.1),rgba(245,200,66,0.05));border-top:2px solid #f5c842;padding:16px;z-index:500;animation:slideUp 0.3s}
+@keyframes slideUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
+.share-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:8px;border:none;font-weight:600;cursor:pointer;font-size:12px;margin:4px}
+.share-btn.whatsapp{background:#25d366;color:#fff}
+.share-btn.twitter{background:#1da1f2;color:#fff}
+.share-btn.copy{background:#f5c842;color:#000}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const {useState,useEffect}=React;
+
+// ══════════════════════════════════════════════
+// ENHANCED CONFIG WITH ALL REVENUE STREAMS
+// ══════════════════════════════════════════════
+const CFG={
+  PAYSTACK_KEY:"pk_live_b9ce8aa36118824d41d49c09824d49161a824a5b",
+  NEXUS_URL:"https://script.google.com/macros/s/AKfycbxSKHyCHbYwgRxoVjtKD4zOOaIwJ_ws_M3O_gB-q-A2ArJhOm72dV6faPYFz3czTNSJ0g/exec",
+  DEEPSEEK_KEY:"sk-cb75007fe7124b8eaaaf28f4d6023c96",
+  COMPANY:"DomisLink International",
+  EMAIL:"domislinkint@gmail.com",
+  AFFILIATE_RATE:0.20,
+};
+
+// ── ENHANCED PLANS ──
+const PLANS=[
+  {id:"basic",label:"Student Basic",icon:"📚",price:1500,days:30,color:"#f5a623",grad:"linear-gradient(90deg,#b37700,#f5a623)",features:["All exam subjects","500+ offline questions","WAEC + JAMB","1 essay review/month"],exams:["WASCE","JAMB"]},
+  {id:"pro",label:"Student Pro",icon:"🎯",price:3500,days:90,color:"#06b6d4",grad:"linear-gradient(90deg,#0891b2,#06b6d4)",badge:"POPULAR",features:["Everything in Basic","Mock Exam Mode","AI Tutor (₦100/mo)","5 essay reviews","Certificate","Progress tracking"],exams:["WASCE","JAMB","Pre-University"]},
+  {id:"booster",label:"Study Booster",icon:"⚡",price:2500,days:30,color:"#f472b6",grad:"linear-gradient(90deg,#ec4899,#f472b6)",badge:"NEW",features:["Unlimited essays","Daily AI Q&A","Video tutorials","Study groups","Leaderboards"],exams:["ALL"]},
+  {id:"teacher",label:"Teacher Plan",icon:"👨‍🏫",price:5000,days:30,color:"#10b981",grad:"linear-gradient(90deg,#059669,#10b981)",features:["Create custom mocks","Track students","Auto-grade","Class reports","WhatsApp integration"],exams:["MANAGE"]},
+  {id:"school",label:"School License",icon:"🏫",price:25000,days:365,color:"#10b981",grad:"linear-gradient(90deg,#059669,#10b981)",features:["Unlimited students","Teacher dashboard","Performance analytics","Custom branding"],exams:["ALL"]},
+  {id:"institution",label:"Institution Pack",icon:"🏛️",price:100000,days:365,color:"#a855f7",grad:"linear-gradient(90deg,#7c3aed,#a855f7)",badge:"BEST VALUE",features:["Everything in School","Unlimited schools","Affiliate program","API access","Dedicated support"],exams:["ALL"]},
+];
+
+// ── PREMIUM ADD-ONS ──
+const ADD_ONS=[
+  {id:"essays",label:"Essay Review Pack",icon:"✍️",price:500,count:5,desc:"5 AI-marked essays with feedback"},
+  {id:"tutor",label:"AI Tutor Access",icon:"🤖",price:100,duration:"monthly",desc:"24/7 AI Q&A for all subjects"},
+  {id:"videos",label:"Video Library",icon:"🎥",price:300,count:1,desc:"Full subject video tutorials"},
+  {id:"livesession",label:"Live Tutor 1:1",icon:"👨‍💼",price:1000,count:1,desc:"60-min live tutoring session"},
+];
+
+// ── VIRAL PROMPTS ──
+const VIRAL_PROMPTS={
+  score_above_80:{icon:"🎉",title:"Amazing Score! 🔥",msg:"You just scored {score}%! Share with your friends and earn ₦500!",action:"Share Now"},
+  streak_day_7:{icon:"🔥",title:"7-Day Streak! 💪",msg:"You're on fire! {streak} days of consistent studying. Show it off!",action:"Share Streak"},
+  first_cert:{icon:"📜",title:"Certificate Unlocked! 👀",msg:"Download your certificate and share it everywhere!",action:"Download & Share"},
+  referral_milestone:{icon:"💰",title:"You Earned ₦{amount}! 😎",msg:"{count} people used your code! Keep referring!",action:"Share Code"},
+};
+
+const genCode=email=>"DML-"+email.split("@")[0].toUpperCase().slice(0,4)+"-"+Math.random().toString(36).slice(2,6).toUpperCase();
+
+function ViralPrompt({data,onShare,onClose}){
+  if(!data)return null;
+  return(
+    <div style={{position:"fixed",bottom:0,left:0,right:0,background:"linear-gradient(180deg,rgba(245,200,66,0.15),rgba(245,200,66,0.05))",borderTop:"2px solid #f5c842",padding:16,zIndex:500}}>
+      <div style={{textAlign:"center",marginBottom:12}}>
+        <div style={{fontSize:40,marginBottom:4}}>{data.icon}</div>
+        <h3 style={{color:"#f5c842",marginBottom:4}}>{data.title}</h3>
+        <p style={{color:"#8a7a50",fontSize:13}}>{data.msg}</p>
+      </div>
+      <div style={{display:"flex",gap:8,justifyContent:"center",flexWrap:"wrap"}}>
+        <button onClick={()=>onShare("whatsapp")} style={{background:"#25d366",color:"#fff",padding:"10px 16px",borderRadius:8,fontWeight:600,fontSize:12}}>💬 WhatsApp</button>
+        <button onClick={()=>onShare("twitter")} style={{background:"#1da1f2",color:"#fff",padding:"10px 16px",borderRadius:8,fontWeight:600,fontSize:12}}>𝕏 Twitter</button>
+        <button onClick={()=>onShare("copy")} style={{background:"#f5c842",color:"#000",padding:"10px 16px",borderRadius:8,fontWeight:600,fontSize:12}}>📋 Copy</button>
+      </div>
+      <button onClick={onClose} style={{width:"100%",marginTop:8,padding:"8px",background:"rgba(255,255,255,0.05)",border:"1px solid rgba(255,255,255,0.1)",color:"#6a5a20",borderRadius:8,fontWeight:600,fontSize:12}}>Maybe later</button>
+    </div>
+  );
+}
+
+function App(){
+  const[screen,setScreen]=useState("landing");
+  const[tab,setTab]=useState("home");
+  const[email,setEmail]=useState("");
+  const[name,setName]=useState("");
+  const[selPlan,setSelPlan]=useState(null);
+  const[paying,setPaying]=useState(false);
+  const[viralPrompt,setViralPrompt]=useState(null);
+  const[lic,setLic]=useState(()=>{try{const l=JSON.parse(localStorage.getItem("dl_lic")||"{}");return l.paid&&l.expires>Date.now()?l:null;}catch{return null;}});
+  const[affCode,setAffCode]=useState("");
+  const[userStats,setUserStats]=useState({score:0,essays:0,streak:0,referrals:0,earnings:0});
+
+  useEffect(()=>{if(lic){setScreen("app");setAffCode(genCode(lic.email));}else{setScreen("landing");}},[lic]);
+
+  const pay=planId=>{
+    if(!email.includes("@")){alert("Enter valid email");return;}
+    if(!name.trim()){alert("Enter your name");return;}
+    const plan=PLANS.find(p=>p.id===planId);
+    setPaying(planId);
+    const h=window.PaystackPop?.setup({
+      key:CFG.PAYSTACK_KEY,email,amount:plan.price*100,currency:"NGN",
+      ref:`dl-${planId}-${Date.now()}`,
+      metadata:{name,plan:planId,company:CFG.COMPANY},
+      callback(r){
+        const code=genCode(email);
+        localStorage.setItem("dl_lic",JSON.stringify({ref:r.reference,email,planId,code,expires:Date.now()+plan.days*86400000,paid:true}));
+        setLic(JSON.parse(localStorage.getItem("dl_lic")));
+        setPaying(false);
+        setScreen("app");
+        setAffCode(code);
+        setViralPrompt({...VIRAL_PROMPTS.referral_milestone,msg:"🎉 Welcome to DomisLink Pro!"});
+      },
+      onClose(){setPaying(false);}
+    });
+    h?.openIframe();
+  };
+
+  const shareToSocial=(platform,msg)=>{
+    const encoded=encodeURIComponent(msg);
+    const urls={
+      whatsapp:`https://wa.me/?text=${encoded}`,
+      twitter:`https://twitter.com/intent/tweet?text=${encoded}`,
+      copy:msg
+    };
+    if(platform==="copy"){
+      navigator.clipboard?.writeText(msg).then(()=>alert("Copied to clipboard!"));
+    }else{
+      window.open(urls[platform],"_blank");
+    }
+  };
+
+  const triggerViralPrompt=(type,data={})=>{
+    const prompts=VIRAL_PROMPTS[type];
+    if(!prompts)return;
+    let msg=prompts.msg;
+    Object.entries(data).forEach(([k,v])=>msg=msg.replace(`{${k}}`,v));
+    setViralPrompt({...prompts,msg});
+  };
+
+  const s={bg:{background:"linear-gradient(150deg,#080c08,#0f1a0f,#130e00)",minHeight:"100vh",color:"#fff"},card:{background:"rgba(245,200,66,0.04)",border:"1px solid rgba(245,200,66,0.12)",borderRadius:14},goldBtn:{background:"linear-gradient(90deg,#c9952a,#f5c842)",color:"#1a1000",border:"none",borderRadius:12,fontWeight:900,cursor:"pointer"},outBtn:{background:"transparent",border:"1px solid rgba(245,200,66,0.3)",color:"#f5c842",borderRadius:12,fontWeight:700,cursor:"pointer"}};
+
+  if(screen==="landing")return(
+    <div style={{...s.bg,overflowY:"auto"}}>
+      <div style={{maxWidth:480,margin:"0 auto",padding:"32px 16px 48px"}}>
+        <div style={{textAlign:"center",marginBottom:28}}>
+          <div style={{fontSize:56,filter:"drop-shadow(0 0 20px rgba(245,200,66,0.4))"}}>✈️</div>
+          <h1 style={{fontSize:32,fontWeight:900,background:"linear-gradient(90deg,#c9952a,#f5c842,#fffbe6)",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent",margin:"8px 0 4px"}}>DomisLink Pro</h1>
+          <p style={{color:"#a89060",fontSize:13}}>Exam Prep + AI Tutor + Earn Money 💰</p>
+        </div>
+        
+        <div style={{display:"flex",justifyContent:"center",gap:20,marginBottom:24}}>
+          {[["₦5M+","User Value"],["8","Subjects"],["AI","Tutor"],["Earn","Money"]].map(([n,l])=>(
+            <div key={l} style={{textAlign:"center"}}>
+              <div style={{fontSize:16,fontWeight:900,color:"#f5c842"}}>{n}</div>
+              <div style={{fontSize:9,color:"#6a5a20",textTransform:"uppercase",letterSpacing:1}}>{l}</div>
+            </div>
+          ))}
+        </div>
+
+        <input value={name} onChange={e=>setName(e.target.value)} placeholder="Your full name" style={{width:"100%",padding:"13px 14px",borderRadius:12,fontSize:16,color:"#fff",background:"rgba(255,255,255,0.06)",border:"1px solid rgba(255,255,255,0.1)",outline:"none",marginBottom:8}}/>
+        <input type="email" value={email} onChange={e=>setEmail(e.target.value)} placeholder="Your email address" style={{width:"100%",padding:"13px 14px",borderRadius:12,fontSize:16,color:"#fff",background:"rgba(255,255,255,0.06)",border:"1px solid rgba(255,255,255,0.1)",outline:"none",marginBottom:16}}/>
+
+        <div style={{fontSize:11,fontWeight:700,color:"#6a5a20",textTransform:"uppercase",letterSpacing:2,marginBottom:12,textAlign:"center"}}>Choose Plan</div>
+        {PLANS.slice(0,5).map(pl=>(
+          <div key={pl.id} onClick={()=>setSelPlan(pl.id)} style={{...s.card,padding:14,marginBottom:8,cursor:"pointer",border:selPlan===pl.id?`2px solid ${pl.color}`:"1px solid rgba(245,200,66,0.12)"}}>
+            {pl.badge&&<div style={{position:"absolute",top:-8,right:12,padding:"3px 10px",borderRadius:20,fontSize:9,fontWeight:900,background:pl.color,color:"#000"}}>{pl.badge}</div>}
+            <div style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
+              <div style={{display:"flex",alignItems:"center",gap:8}}>
+                <span style={{fontSize:22}}>{pl.icon}</span>
+                <div><div style={{fontWeight:900,fontSize:14,color:"#ddd"}}>{pl.label}</div><div style={{fontSize:10,color:"#6a5a20"}}>{pl.days}d · ₦{pl.price.toLocaleString()}</div></div>
+              </div>
+            </div>
+            {selPlan===pl.id&&<button onClick={e=>{e.stopPropagation();pay(pl.id);}} style={{...s.goldBtn,width:"100%",padding:"12px 0",fontSize:14,marginTop:10}}>Pay Now</button>}
+          </div>
+        ))}
+
+        <p style={{textAlign:"center",color:"#4a4020",fontSize:10,marginTop:20}}>Secured by Paystack · {CFG.EMAIL}</p>
+      </div>
+      {viralPrompt&&<ViralPrompt data={viralPrompt} onShare={m=>shareToSocial(m,viralPrompt.msg)} onClose={()=>setViralPrompt(null)}/>}
+    </div>
+  );
+
+  return(
+    <div style={{height:"100vh",...s.bg,display:"flex",flexDirection:"column"}}>
+      <div style={{flex:1,overflowY:"auto",paddingBottom:70}}>
+        
+        {tab==="home"&&(
+          <div style={{padding:"20px 16px"}}>
+            <h2 style={{fontSize:22,fontWeight:900,color:"#f5c842"}}>Welcome Back 👋</h2>
+            <p style={{fontSize:12,color:"#6a5a20",marginBottom:16}}>{lic?.email}</p>
+
+            {/* Stats Cards */}
+            <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:8,marginBottom:16}}>
+              {[["🔥",userStats.streak,"Day Streak"],["💰",`₦${userStats.earnings}`,"Earned"],["📝",userStats.essays,"Essays"],["👥",userStats.referrals,"Referrals"]].map(([ic,n,l])=>(
+                <div key={l} style={{...s.card,padding:12,textAlign:"center"}}>
+                  <div style={{fontSize:24}}>{ic}</div>
+                  <div style={{fontWeight:900,fontSize:18,color:"#f5c842"}}>{n}</div>
+                  <div style={{fontSize:10,color:"#6a5a20"}}>{l}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* Quick Actions */}
+            <div style={{...s.card,padding:14,marginBottom:16}}>
+              <div style={{fontSize:11,fontWeight:900,color:"#f5c842",marginBottom:10}}>💡 Quick Actions</div>
+              <button onClick={()=>triggerViralPrompt("score_above_80",{score:"87%"})} style={{width:"100%",padding:"10px",background:"rgba(76,175,80,0.15)",border:"1px solid #4caf50",color:"#4caf50",borderRadius:8,fontWeight:600,fontSize:12,marginBottom:6}}>📢 Share Score</button>
+              <button onClick={()=>triggerViralPrompt("referral_milestone",{count:3,amount:"900"})} style={{width:"100%",padding:"10px",background:"rgba(245,200,66,0.15)",border:"1px solid #f5c842",color:"#f5c842",borderRadius:8,fontWeight:600,fontSize:12}}>💰 Share Referral</button>
+            </div>
+
+            {/* Affiliate Code */}
+            <div style={{...s.card,padding:14,border:"1px solid rgba(245,200,66,0.2)"}}>
+              <div style={{fontSize:11,fontWeight:900,color:"#f5c842",marginBottom:6}}>💰 Your Affiliate Code</div>
+              <div style={{fontFamily:"monospace",fontSize:16,fontWeight:900,color:"#fff",background:"rgba(245,200,66,0.08)",padding:"10px",borderRadius:8,textAlign:"center",marginBottom:8}}>{affCode}</div>
+              <div style={{fontSize:11,color:"#6a5a20",marginBottom:10}}>Earn 20% on every referral! Share in WhatsApp, Twitter, TikTok...</div>
+              <button onClick={()=>navigator.clipboard?.writeText(affCode)&&alert("Copied!")} style={{...s.goldBtn,width:"100%",padding:"10px",fontSize:12}}>📋 Copy Code</button>
+            </div>
+          </div>
+        )}
+
+        {tab==="shop"&&(
+          <div style={{padding:"20px 16px"}}>
+            <h2 style={{fontSize:20,fontWeight:900,color:"#f5c842",marginBottom:16}}>Premium Add-Ons</h2>
+            {ADD_ONS.map(ao=>(
+              <div key={ao.id} style={{...s.card,padding:12,marginBottom:10}}>
+                <div style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
+                  <div>
+                    <div style={{fontWeight:900,color:"#ddd",fontSize:13}}>{ao.icon} {ao.label}</div>
+                    <div style={{fontSize:11,color:"#6a5a20"}}>{ao.desc}</div>
+                  </div>
+                  <div style={{textAlign:"right"}}>
+                    <div style={{fontWeight:900,color:"#f5c842",fontSize:14}}>₦{ao.price.toLocaleString()}</div>
+                    <button style={{...s.goldBtn,padding:"6px 12px",fontSize:10,marginTop:4}}>Buy</button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {tab==="leaderboard"&&(
+          <div style={{padding:"20px 16px"}}>
+            <h2 style={{fontSize:20,fontWeight:900,color:"#f5c842",marginBottom:16}}>🏆 Top Referrers</h2>
+            {[{rank:1,name:"Chisom O.",ref:127,earn:"₦38,100"},{rank:2,name:"Tunde A.",ref:94,earn:"₦28,200"},{rank:3,name:"Zainab M.",ref:81,earn:"₦24,300"}].map((user,i)=>(
+              <div key={i} style={{...s.card,padding:12,marginBottom:8,display:"flex",justifyContent:"space-between",alignItems:"center"}}>
+                <div style={{display:"flex",alignItems:"center",gap:10}}>
+                  <div style={{width:32,height:32,borderRadius:"50%",background:i===0?"#f5c842":i===1?"#c0c0c0":"#cd7f32",display:"flex",alignItems:"center",justifyContent:"center",fontWeight:900,color:"#000"}}>{i+1}</div>
+                  <div><div style={{fontWeight:700,color:"#ddd"}}>{user.name}</div><div style={{fontSize:10,color:"#6a5a20"}}>{user.ref} referrals</div></div>
+                </div>
+                <div style={{fontWeight:900,color:"#f5c842"}}>{user.earn}</div>
+              </div>
+            ))}
+            <div style={{textAlign:"center",marginTop:16,padding:12,background:"rgba(245,200,66,0.05)",borderRadius:8}}>
+              <div style={{fontWeight:700,color:"#f5c842",marginBottom:4}}>You can be #1! 🚀</div>
+              <div style={{fontSize:11,color:"#6a5a20"}}>Share your code and earn up to ₦500,000/month</div>
+            </div>
+          </div>
+        )}
+
+      </div>
+
+      {/* Bottom Nav */}
+      <nav style={{position:"fixed",bottom:0,left:0,right:0,height:58,background:"#0a100a",borderTop:"1px solid rgba(245,200,66,0.1)",display:"flex"}}>
+        {[{id:"home",ic:"🏠",lb:"Home"},{id:"shop",ic:"🛍️",lb:"Shop"},{id:"leaderboard",ic:"🏆",lb:"Leaderboard"},{id:"account",ic:"👤",lb:"Account"}].map(n=>(
+          <button key={n.id} onClick={()=>setTab(n.id)} style={{flex:1,display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",gap:2,background:"none",border:"none",fontSize:9,fontWeight:700,color:tab===n.id?"#f5c842":"#445"}}>
+            <span style={{fontSize:20}}>{n.ic}</span>{n.lb}
+          </button>
+        ))}
+      </nav>
+      
+      {viralPrompt&&<ViralPrompt data={viralPrompt} onShare={m=>shareToSocial(m,viralPrompt.msg)} onClose={()=>setViralPrompt(null)}/>}
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(React.createElement(App));
+</script>
+</body>
+</html>
