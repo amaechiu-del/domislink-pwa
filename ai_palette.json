@@ -1,0 +1,538 @@
+{
+  "ai_palette": {
+    "version": "1.0.0",
+    "description": "AI-powered interactive learning assistant with pre-created prompts for topics, lessons, and illustrations",
+    "features": [
+      "Smart question answering",
+      "Topic-specific interactive prompts",
+      "Auto-generated illustrations",
+      "Lesson creation assistance",
+      "Real-time explanations",
+      "Interactive visualization suggestions"
+    ],
+    "question_asking_interface": {
+      "modes": [
+        {
+          "name": "Quick Question",
+          "icon": "❓",
+          "description": "Ask any question about current topic",
+          "placeholder": "Ask me anything about this topic...",
+          "max_length": 500,
+          "response_format": "concise_explanation",
+          "xp_reward": 10
+        },
+        {
+          "name": "Deep Dive",
+          "icon": "🔬",
+          "description": "Get detailed explanation with examples",
+          "placeholder": "Explain this in detail with examples...",
+          "max_length": 1000,
+          "response_format": "detailed_with_examples",
+          "xp_reward": 25
+        },
+        {
+          "name": "Practice Problem",
+          "icon": "📝",
+          "description": "Generate practice problems for topic",
+          "placeholder": "Generate practice problems on this topic",
+          "max_length": 300,
+          "response_format": "problem_with_solution",
+          "xp_reward": 30
+        },
+        {
+          "name": "Visual Explanation",
+          "icon": "🎨",
+          "description": "Request diagram/illustration explanation",
+          "placeholder": "Show me a diagram or illustration of this concept",
+          "max_length": 300,
+          "response_format": "visual_guide",
+          "xp_reward": 20
+        },
+        {
+          "name": "Real World Example",
+          "icon": "🌍",
+          "description": "See real-world applications",
+          "placeholder": "How is this used in real life?",
+          "max_length": 400,
+          "response_format": "real_world_application",
+          "xp_reward": 15
+        }
+      ]
+    },
+    "pre_created_prompts_by_subject": {
+      "mathematics": {
+        "JSS1": {
+          "Basic_Arithmetic": [
+            {
+              "id": "math_jss1_arith_001",
+              "category": "Interactive Learning",
+              "prompt": "Explain addition and subtraction with real objects (coins, fruits). Show step-by-step solution for: 25 + 18 = ?",
+              "illustration_suggestion": "Interactive counter animation showing 25 coins + 18 coins = 43 coins",
+              "response_type": "visual_explanation",
+              "xp_value": 25,
+              "difficulty": "beginner"
+            },
+            {
+              "id": "math_jss1_arith_002",
+              "category": "Interactive Learning",
+              "prompt": "Create a practice problem: 'A store has 30 apples. 12 are sold. How many remain?'",
+              "illustration_suggestion": "Animated apple tree visualization showing before/after",
+              "response_type": "problem_solving",
+              "xp_value": 20,
+              "difficulty": "beginner"
+            },
+            {
+              "id": "math_jss1_arith_003",
+              "category": "Visualization",
+              "prompt": "Show number line method for solving: 45 - 17 = ?",
+              "illustration_suggestion": "Interactive number line with animation from 45 down to 17",
+              "response_type": "visual_guide",
+              "xp_value": 30,
+              "difficulty": "beginner"
+            }
+          ],
+          "Fractions": [
+            {
+              "id": "math_jss1_frac_001",
+              "category": "Interactive Learning",
+              "prompt": "Explain fractions using pizza slices. What is 1/2 + 1/4?",
+              "illustration_suggestion": "Animated pizza divided into fractions with interactive drag-and-combine",
+              "response_type": "visual_explanation",
+              "xp_value": 35,
+              "difficulty": "beginner"
+            },
+            {
+              "id": "math_jss1_frac_002",
+              "category": "Real World",
+              "prompt": "How are fractions used in cooking? Give recipe examples with 1/2 cup, 1/4 cup measurements",
+              "illustration_suggestion": "Interactive measuring cup visualization",
+              "response_type": "real_world_application",
+              "xp_value": 25,
+              "difficulty": "beginner"
+            }
+          ]
+        },
+        "JSS2": {
+          "Linear_Equations": [
+            {
+              "id": "math_jss2_eq_001",
+              "category": "Interactive Learning",
+              "prompt": "Explain solving linear equations using balance method. Solve: 2x + 3 = 9",
+              "illustration_suggestion": "Interactive balance scale showing both sides of equation, weights moving as operations are performed",
+              "response_type": "visual_explanation",
+              "xp_value": 40,
+              "difficulty": "intermediate"
+            },
+            {
+              "id": "math_jss2_eq_002",
+              "category": "Step by Step",
+              "prompt": "Create step-by-step solution for: 3x - 5 = 10",
+              "illustration_suggestion": "Animated whiteboard showing algebraic steps with color-coded variables and numbers",
+              "response_type": "detailed_with_examples",
+              "xp_value": 35,
+              "difficulty": "intermediate"
+            }
+          ],
+          "Geometry": [
+            {
+              "id": "math_jss2_geom_001",
+              "category": "Interactive Visualization",
+              "prompt": "Explain how to calculate area and perimeter of rectangles. Use interactive diagram.",
+              "illustration_suggestion": "Interactive rectangle tool: drag corners to change dimensions, see formulas update in real-time",
+              "response_type": "visual_guide",
+              "xp_value": 45,
+              "difficulty": "intermediate"
+            },
+            {
+              "id": "math_jss2_geom_002",
+              "category": "Application",
+              "prompt": "How is geometry used in architecture and design? Show real buildings/designs.",
+              "illustration_suggestion": "Image gallery of geometric buildings with overlaid geometric shapes",
+              "response_type": "real_world_application",
+              "xp_value": 30,
+              "difficulty": "intermediate"
+            }
+          ]
+        },
+        "JSS3": {
+          "Quadratic_Equations": [
+            {
+              "id": "math_jss3_quad_001",
+              "category": "Interactive Learning",
+              "prompt": "Explain quadratic equations by graphing. Show parabola for y = x² - 5x + 6",
+              "illustration_suggestion": "Interactive graph plotting tool showing parabola, roots marked, and factorization",
+              "response_type": "visual_explanation",
+              "xp_value": 50,
+              "difficulty": "advanced"
+            },
+            {
+              "id": "math_jss3_quad_002",
+              "category": "Method Comparison",
+              "prompt": "Compare three methods: Factoring, Completing the Square, Quadratic Formula for x² - 5x + 6 = 0",
+              "illustration_suggestion": "Three-panel interactive showing all methods side-by-side with animations",
+              "response_type": "detailed_with_examples",
+              "xp_value": 55,
+              "difficulty": "advanced"
+            }
+          ]
+        }
+      },
+      "english": {
+        "JSS1": {
+          "Parts_of_Speech": [
+            {
+              "id": "eng_jss1_pos_001",
+              "category": "Interactive Learning",
+              "prompt": "Identify parts of speech in sentences. Hover over words to see their role.",
+              "illustration_suggestion": "Interactive text with color-coded parts of speech (nouns=blue, verbs=red, etc.)",
+              "response_type": "visual_explanation",
+              "xp_value": 20,
+              "difficulty": "beginner"
+            },
+            {
+              "id": "eng_jss1_pos_002",
+              "category": "Interactive Quiz",
+              "prompt": "Match words to their parts of speech in an interactive drag-and-drop",
+              "illustration_suggestion": "Interactive matching game with animated feedback",
+              "response_type": "interactive_exercise",
+              "xp_value": 25,
+              "difficulty": "beginner"
+            }
+          ],
+          "Spelling": [
+            {
+              "id": "eng_jss1_spell_001",
+              "category": "Interactive Learning",
+              "prompt": "Show correct spelling with letter-by-letter breakdown and pronunciation",
+              "illustration_suggestion": "Animated text showing each letter appearing with phonetic guide",
+              "response_type": "visual_explanation",
+              "xp_value": 15,
+              "difficulty": "beginner"
+            }
+          ]
+        },
+        "JSS2": {
+          "Literary_Devices": [
+            {
+              "id": "eng_jss2_lit_001",
+              "category": "Interactive Learning",
+              "prompt": "Explain similes with real examples. Create a chart: Simile Examples → Visual Representation",
+              "illustration_suggestion": "Interactive chart showing similes with drawings (e.g., 'White as snow' → snowflake image)",
+              "response_type": "visual_explanation",
+              "xp_value": 40,
+              "difficulty": "intermediate"
+            },
+            {
+              "id": "eng_jss2_lit_002",
+              "category": "Identification",
+              "prompt": "Read passages and identify literary devices used. Label each one.",
+              "illustration_suggestion": "Interactive text highlighting with popup explanations of each device",
+              "response_type": "interactive_exercise",
+              "xp_value": 35,
+              "difficulty": "intermediate"
+            },
+            {
+              "id": "eng_jss2_lit_003",
+              "category": "Creative",
+              "prompt": "Create your own simile, metaphor, and personification for common objects",
+              "illustration_suggestion": "Interactive writing prompt with illustration suggestions",
+              "response_type": "creative_exercise",
+              "xp_value": 45,
+              "difficulty": "intermediate"
+            }
+          ]
+        },
+        "JSS3": {
+          "Essay_Writing": [
+            {
+              "id": "eng_jss3_essay_001",
+              "category": "Interactive Learning",
+              "prompt": "Break down essay structure: Hook, Thesis, Body, Conclusion with examples",
+              "illustration_suggestion": "Interactive diagram showing essay structure with real examples expandable at each section",
+              "response_type": "visual_guide",
+              "xp_value": 50,
+              "difficulty": "advanced"
+            },
+            {
+              "id": "eng_jss3_essay_002",
+              "category": "Planning Tool",
+              "prompt": "Create an interactive essay outline builder for topic: 'Impact of Technology on Education'",
+              "illustration_suggestion": "Mind map visualization that auto-expands with AI suggestions",
+              "response_type": "interactive_tool",
+              "xp_value": 55,
+              "difficulty": "advanced"
+            }
+          ]
+        }
+      },
+      "physics": {
+        "JSS1": {
+          "Motion_and_Speed": [
+            {
+              "id": "phys_jss1_motion_001",
+              "category": "Interactive Simulation",
+              "prompt": "Simulate motion: Set initial velocity and acceleration, watch object move",
+              "illustration_suggestion": "Interactive physics simulator with animated object, vectors showing velocity and acceleration",
+              "response_type": "interactive_simulation",
+              "xp_value": 40,
+              "difficulty": "beginner"
+            },
+            {
+              "id": "phys_jss1_motion_002",
+              "category": "Real World",
+              "prompt": "Real examples: Car acceleration, falling object, thrown ball. Show calculations.",
+              "illustration_suggestion": "Animated scenarios with speed/acceleration values shown in real-time",
+              "response_type": "real_world_application",
+              "xp_value": 30,
+              "difficulty": "beginner"
+            }
+          ],
+          "Forces": [
+            {
+              "id": "phys_jss1_force_001",
+              "category": "Interactive Learning",
+              "prompt": "Demonstrate Newton's 3 laws with interactive animations and examples",
+              "illustration_suggestion": "Three interactive demos: inertia, F=ma, action-reaction with draggable objects",
+              "response_type": "visual_explanation",
+              "xp_value": 45,
+              "difficulty": "beginner"
+            }
+          ]
+        },
+        "JSS2": {
+          "Waves": [
+            {
+              "id": "phys_jss2_wave_001",
+              "category": "Interactive Simulation",
+              "prompt": "Create interactive wave simulator: adjust frequency, wavelength, amplitude",
+              "illustration_suggestion": "Interactive sine wave generator with real-time visualization of parameter changes",
+              "response_type": "interactive_simulation",
+              "xp_value": 50,
+              "difficulty": "intermediate"
+            },
+            {
+              "id": "phys_jss2_wave_002",
+              "category": "Comparison",
+              "prompt": "Compare sound waves, light waves, and water waves side-by-side",
+              "illustration_suggestion": "Three-panel comparison with animated wave representations",
+              "response_type": "visual_guide",
+              "xp_value": 40,
+              "difficulty": "intermediate"
+            }
+          ],
+          "Electricity": [
+            {
+              "id": "phys_jss2_elec_001",
+              "category": "Interactive Circuit Builder",
+              "prompt": "Build circuits interactively: place components, see current flow",
+              "illustration_suggestion": "Drag-and-drop circuit simulator with glowing electrons showing current flow",
+              "response_type": "interactive_tool",
+              "xp_value": 55,
+              "difficulty": "intermediate"
+            }
+          ]
+        }
+      }
+    },
+    "illustration_ai_suggestions": {
+      "types": [
+        {
+          "name": "Animated Diagram",
+          "icon": "📊",
+          "description": "Moving diagrams to show process/change",
+          "examples": ["Number line animations", "Equation solving steps", "Wave motion"]
+        },
+        {
+          "name": "Interactive Visualization",
+          "icon": "🎮",
+          "description": "User can interact with the illustration",
+          "examples": ["Draggable objects", "Adjustable parameters", "Click-to-reveal"]
+        },
+        {
+          "name": "Real-world Photo",
+          "icon": "📷",
+          "description": "Photo with annotations/overlays",
+          "examples": ["Buildings showing geometry", "Nature showing biology", "Devices showing physics"]
+        },
+        {
+          "name": "Comparison Chart",
+          "icon": "📈",
+          "description": "Visual comparison of concepts",
+          "examples": ["Before/after", "Multiple methods", "Different approaches"]
+        },
+        {
+          "name": "Step-by-Step Guide",
+          "icon": "📝",
+          "description": "Numbered steps with illustrations",
+          "examples": ["Solution process", "Problem-solving", "Procedure"]
+        },
+        {
+          "name": "Mind Map",
+          "icon": "🧠",
+          "description": "Hierarchical concept organization",
+          "examples": ["Essay outline", "Topic breakdown", "Concept relationships"]
+        }
+      ]
+    },
+    "interactive_lesson_templates": {
+      "template_1": {
+        "name": "Concept Introduction",
+        "structure": [
+          {
+            "section": "Hook",
+            "ai_prompt": "Start with an engaging real-world question or scenario related to the topic",
+            "illustration": "Eye-catching relevant image"
+          },
+          {
+            "section": "Definition",
+            "ai_prompt": "Provide clear definition with everyday language explanation",
+            "illustration": "Diagram showing what the concept is"
+          },
+          {
+            "section": "Why It Matters",
+            "ai_prompt": "Show applications and real-world relevance",
+            "illustration": "Real-world examples or use cases"
+          },
+          {
+            "section": "Key Points",
+            "ai_prompt": "List 3-5 key takeaways",
+            "illustration": "Bullet points with icons"
+          }
+        ]
+      },
+      "template_2": {
+        "name": "Problem Solving",
+        "structure": [
+          {
+            "section": "Problem Statement",
+            "ai_prompt": "Present the problem clearly",
+            "illustration": "Visual representation of the problem"
+          },
+          {
+            "section": "Method Selection",
+            "ai_prompt": "Explain which method to use and why",
+            "illustration": "Comparison of available methods"
+          },
+          {
+            "section": "Step-by-Step Solution",
+            "ai_prompt": "Break down into clear steps with explanations",
+            "illustration": "Animated step-by-step process"
+          },
+          {
+            "section": "Common Mistakes",
+            "ai_prompt": "Show typical errors and how to avoid them",
+            "illustration": "Before/after corrections"
+          },
+          {
+            "section": "Practice Problem",
+            "ai_prompt": "Provide similar problem for practice",
+            "illustration": "Interactive practice space"
+          }
+        ]
+      },
+      "template_3": {
+        "name": "Comparative Analysis",
+        "structure": [
+          {
+            "section": "Concept A",
+            "ai_prompt": "Explain first concept with examples",
+            "illustration": "Visual representation of concept A"
+          },
+          {
+            "section": "Concept B",
+            "ai_prompt": "Explain second concept with examples",
+            "illustration": "Visual representation of concept B"
+          },
+          {
+            "section": "Similarities",
+            "ai_prompt": "List what they have in common",
+            "illustration": "Venn diagram shared area"
+          },
+          {
+            "section": "Differences",
+            "ai_prompt": "List key differences",
+            "illustration": "Comparison table or dual visualization"
+          },
+          {
+            "section": "When to Use Each",
+            "ai_prompt": "Provide decision criteria",
+            "illustration": "Flowchart or decision tree"
+          }
+        ]
+      }
+    },
+    "ai_interaction_examples": {
+      "example_1": {
+        "user_input": "I don't understand quadratic equations",
+        "ai_palette_response": [
+          {
+            "mode": "Deep Dive",
+            "response": "Quadratic equations are equations where the highest power of x is 2. They have the form ax² + bx + c = 0...",
+            "illustration": "Interactive parabola showing roots"
+          },
+          {
+            "mode": "Real World Example",
+            "response": "Used in physics for projectile motion, in architecture for dome design, in business for profit optimization...",
+            "illustration": "Photos of real applications with annotations"
+          },
+          {
+            "mode": "Visual Explanation",
+            "response": "Let me show you three methods to solve them...",
+            "illustration": "Three-panel animated solution methods"
+          }
+        ]
+      },
+      "example_2": {
+        "user_input": "How do I write a good essay?",
+        "ai_palette_response": [
+          {
+            "mode": "Visual Explanation",
+            "response": "Essays follow a structure: introduction with hook and thesis, body paragraphs with evidence, conclusion...",
+            "illustration": "Interactive essay structure diagram with expandable examples"
+          },
+          {
+            "mode": "Practice Problem",
+            "response": "Here's a practice topic: 'How technology is changing education'. Let's outline it together...",
+            "illustration": "Interactive mind map builder"
+          },
+          {
+            "mode": "Real World Example",
+            "response": "See how professional writers structure their essays...",
+            "illustration": "Side-by-side examples of strong essays with annotations"
+          }
+        ]
+      }
+    },
+    "context_aware_prompts": {
+      "during_lesson": [
+        "Can you explain this differently?",
+        "Show me a worked example",
+        "How is this used in real life?",
+        "Compare this with [related topic]",
+        "What are common mistakes?",
+        "Create a practice problem"
+      ],
+      "during_quiz": [
+        "Can you explain why this is the answer?",
+        "Show me the correct working",
+        "What did I misunderstand?",
+        "Similar practice problem please",
+        "Explain this concept again"
+      ],
+      "during_flashcard": [
+        "Give me more examples",
+        "Show a visual of this",
+        "How do I remember this?",
+        "Real world application?",
+        "Create a memory aid"
+      ]
+    },
+    "ai_generation_settings": {
+      "response_tone": "Friendly, encouraging, clear",
+      "language_level": "Adapt to class (JSS1-3 simple, SSS1-3 complex)",
+      "explanation_style": "Visual-first, then textual",
+      "example_count": "2-3 examples per explanation",
+      "accessibility": "Include text alternatives for all visuals"
+    }
+  }
+}
