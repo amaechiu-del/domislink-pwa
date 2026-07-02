@@ -1,0 +1,616 @@
+{
+  "subjects": [
+    {
+      "id": "mathematics",
+      "name": "Mathematics",
+      "icon": "🔢",
+      "exams": ["WAEC", "NECO", "JAMB", "BECE"],
+      "topics": 45,
+      "free": true,
+      "description": "Core mathematics for all exam boards",
+      "topics_list": [
+        {
+          "id": "math_001",
+          "name": "Number Systems & Operations",
+          "subtopics": ["Integers", "Fractions", "Decimals", "Percentages", "Ratios & Proportions"]
+        },
+        {
+          "id": "math_002",
+          "name": "Algebra",
+          "subtopics": ["Linear Equations", "Quadratic Equations", "Inequalities", "Polynomials", "Factorization"]
+        },
+        {
+          "id": "math_003",
+          "name": "Geometry & Trigonometry",
+          "subtopics": ["Angles & Lines", "Triangles", "Circles", "Polygons", "Sine, Cosine, Tangent"]
+        },
+        {
+          "id": "math_004",
+          "name": "Calculus Basics",
+          "subtopics": ["Limits", "Derivatives", "Integration"]
+        },
+        {
+          "id": "math_005",
+          "name": "Statistics & Probability",
+          "subtopics": ["Mean, Median, Mode", "Standard Deviation", "Probability", "Permutations & Combinations"]
+        }
+      ]
+    },
+    {
+      "id": "english",
+      "name": "English Language",
+      "icon": "📝",
+      "exams": ["WAEC", "NECO", "JAMB", "BECE"],
+      "topics": 38,
+      "free": true,
+      "description": "English language and comprehension",
+      "topics_list": [
+        {
+          "id": "eng_001",
+          "name": "Grammar & Syntax",
+          "subtopics": ["Parts of Speech", "Sentence Structure", "Tenses", "Subject-Verb Agreement", "Pronouns"]
+        },
+        {
+          "id": "eng_002",
+          "name": "Vocabulary & Word Use",
+          "subtopics": ["Synonyms", "Antonyms", "Homonyms", "Idioms", "Collocations"]
+        },
+        {
+          "id": "eng_003",
+          "name": "Literary Devices",
+          "subtopics": ["Metaphor", "Simile", "Alliteration", "Onomatopoeia", "Personification"]
+        },
+        {
+          "id": "eng_004",
+          "name": "Reading Comprehension",
+          "subtopics": ["Main Ideas", "Details", "Inference", "Author's Purpose", "Tone & Style"]
+        },
+        {
+          "id": "eng_005",
+          "name": "Writing Skills",
+          "subtopics": ["Essays", "Reports", "Letters", "Summaries", "Paragraphing"]
+        }
+      ]
+    },
+    {
+      "id": "physics",
+      "name": "Physics",
+      "icon": "⚡",
+      "exams": ["WAEC", "NECO", "JAMB"],
+      "topics": 42,
+      "free": false,
+      "description": "Physics for senior secondary & JAMB",
+      "topics_list": [
+        {
+          "id": "phys_001",
+          "name": "Mechanics",
+          "subtopics": ["Motion", "Forces", "Work & Energy", "Momentum", "Circular Motion"]
+        },
+        {
+          "id": "phys_002",
+          "name": "Waves & Oscillations",
+          "subtopics": ["Simple Harmonic Motion", "Waves", "Sound", "Light"]
+        },
+        {
+          "id": "phys_003",
+          "name": "Electricity & Magnetism",
+          "subtopics": ["Electric Fields", "Circuits", "Magnetism", "Electromagnetic Induction"]
+        },
+        {
+          "id": "phys_004",
+          "name": "Thermodynamics",
+          "subtopics": ["Heat & Temperature", "Laws of Thermodynamics", "Kinetic Theory"]
+        },
+        {
+          "id": "phys_005",
+          "name": "Modern Physics",
+          "subtopics": ["Atomic Structure", "Nuclear Physics", "Quantum Theory"]
+        }
+      ]
+    },
+    {
+      "id": "chemistry",
+      "name": "Chemistry",
+      "icon": "🧪",
+      "exams": ["WAEC", "NECO", "JAMB"],
+      "topics": 40,
+      "free": false,
+      "description": "Chemistry for senior secondary & JAMB",
+      "topics_list": [
+        {
+          "id": "chem_001",
+          "name": "Atomic Structure",
+          "subtopics": ["Elements & Compounds", "Atomic Number & Mass", "Electron Configuration", "Periodic Table"]
+        },
+        {
+          "id": "chem_002",
+          "name": "Chemical Bonding",
+          "subtopics": ["Ionic Bonds", "Covalent Bonds", "Metallic Bonds", "Electronegativity"]
+        },
+        {
+          "id": "chem_003",
+          "name": "States of Matter",
+          "subtopics": ["Solids", "Liquids", "Gases", "Phase Changes"]
+        },
+        {
+          "id": "chem_004",
+          "name": "Chemical Reactions",
+          "subtopics": ["Equations", "Types of Reactions", "Oxidation-Reduction", "Equilibrium"]
+        },
+        {
+          "id": "chem_005",
+          "name": "Organic Chemistry",
+          "subtopics": ["Alkanes", "Alkenes", "Alkynes", "Functional Groups", "Polymers"]
+        }
+      ]
+    },
+    {
+      "id": "biology",
+      "name": "Biology",
+      "icon": "🧬",
+      "exams": ["WAEC", "NECO", "JAMB"],
+      "topics": 50,
+      "free": false,
+      "description": "Biology for senior secondary & JAMB",
+      "topics_list": [
+        {
+          "id": "bio_001",
+          "name": "Cell Biology",
+          "subtopics": ["Cell Structure", "Cell Membrane", "Organelles", "Mitosis & Meiosis"]
+        },
+        {
+          "id": "bio_002",
+          "name": "Genetics & Heredity",
+          "subtopics": ["DNA & RNA", "Genes", "Inheritance Patterns", "Mutations"]
+        },
+        {
+          "id": "bio_003",
+          "name": "Human Anatomy & Physiology",
+          "subtopics": ["Skeleton", "Muscles", "Nervous System", "Circulatory System", "Respiratory System"]
+        },
+        {
+          "id": "bio_004",
+          "name": "Ecology",
+          "subtopics": ["Ecosystems", "Food Chains", "Energy Flow", "Population Dynamics", "Conservation"]
+        },
+        {
+          "id": "bio_005",
+          "name": "Evolution",
+          "subtopics": ["Natural Selection", "Adaptation", "Classification", "Origin of Life"]
+        }
+      ]
+    },
+    {
+      "id": "economics",
+      "name": "Economics",
+      "icon": "📊",
+      "exams": ["WAEC", "NECO", "JAMB"],
+      "topics": 35,
+      "free": false,
+      "description": "Economics for senior secondary & JAMB",
+      "topics_list": [
+        {
+          "id": "econ_001",
+          "name": "Basic Economic Concepts",
+          "subtopics": ["Scarcity & Resources", "Production Possibilities", "Types of Economies", "Economic Systems"]
+        },
+        {
+          "id": "econ_002",
+          "name": "Microeconomics",
+          "subtopics": ["Demand & Supply", "Price Mechanism", "Consumer Behavior", "Producer Behavior"]
+        },
+        {
+          "id": "econ_003",
+          "name": "Macroeconomics",
+          "subtopics": ["GDP & National Income", "Inflation", "Unemployment", "International Trade"]
+        },
+        {
+          "id": "econ_004",
+          "name": "Money & Banking",
+          "subtopics": ["Money Supply", "Banking System", "Monetary Policy", "Exchange Rates"]
+        },
+        {
+          "id": "econ_005",
+          "name": "Government & Economy",
+          "subtopics": ["Fiscal Policy", "Taxation", "Public Expenditure", "Economic Growth"]
+        }
+      ]
+    },
+    {
+      "id": "government",
+      "name": "Government/Civics",
+      "icon": "🏛️",
+      "exams": ["WAEC", "NECO", "JAMB"],
+      "topics": 32,
+      "free": false,
+      "description": "Political systems and governance",
+      "topics_list": [
+        {
+          "id": "govt_001",
+          "name": "Forms of Government",
+          "subtopics": ["Democracy", "Monarchy", "Dictatorship", "Federal Systems", "Unitary Systems"]
+        },
+        {
+          "id": "govt_002",
+          "name": "Nigerian Government",
+          "subtopics": ["Constitution", "Executive Branch", "Legislative Branch", "Judicial Branch"]
+        },
+        {
+          "id": "govt_003",
+          "name": "Political Parties & Elections",
+          "subtopics": ["Party Systems", "Electoral Processes", "Voting Systems", "Campaign Finance"]
+        },
+        {
+          "id": "govt_004",
+          "name": "Rights & Responsibilities",
+          "subtopics": ["Human Rights", "Citizenship", "Duties of Citizens", "Rule of Law"]
+        },
+        {
+          "id": "govt_005",
+          "name": "International Relations",
+          "subtopics": ["UN & Global Organizations", "Diplomacy", "Treaties", "Global Issues"]
+        }
+      ]
+    },
+    {
+      "id": "literature",
+      "name": "Literature in English",
+      "icon": "📚",
+      "exams": ["WAEC", "NECO", "JAMB"],
+      "topics": 28,
+      "free": false,
+      "description": "English literature, poetry, and prose",
+      "topics_list": [
+        {
+          "id": "lit_001",
+          "name": "Prose Analysis",
+          "subtopics": ["Plot Structure", "Character Development", "Setting", "Themes", "Symbolism"]
+        },
+        {
+          "id": "lit_002",
+          "name": "Poetry",
+          "subtopics": ["Meter & Rhyme", "Stanza Structure", "Imagery", "Figurative Language"]
+        },
+        {
+          "id": "lit_003",
+          "name": "Drama",
+          "subtopics": ["Act & Scene", "Dialogue", "Stage Directions", "Conflict Resolution"]
+        },
+        {
+          "id": "lit_004",
+          "name": "African Literature",
+          "subtopics": ["Nigerian Authors", "Contemporary Works", "Cultural Context"]
+        },
+        {
+          "id": "lit_005",
+          "name": "Critical Writing",
+          "subtopics": ["Literary Criticism", "Essay Writing", "Textual Evidence", "Analysis Techniques"]
+        }
+      ]
+    },
+    {
+      "id": "accounting",
+      "name": "Accounting",
+      "icon": "💰",
+      "exams": ["WAEC", "NECO"],
+      "topics": 30,
+      "free": false,
+      "description": "Accounting principles and bookkeeping",
+      "topics_list": [
+        {
+          "id": "acc_001",
+          "name": "Accounting Basics",
+          "subtopics": ["Concepts & Principles", "Accounting Equation", "Double Entry", "Debit & Credit"]
+        },
+        {
+          "id": "acc_002",
+          "name": "Recording Transactions",
+          "subtopics": ["Journals", "Ledgers", "Trial Balance", "Adjustments"]
+        },
+        {
+          "id": "acc_003",
+          "name": "Financial Statements",
+          "subtopics": ["Income Statement", "Balance Sheet", "Cash Flow Statement", "Statement of Changes in Equity"]
+        },
+        {
+          "id": "acc_004",
+          "name": "Inventory Valuation",
+          "subtopics": ["FIFO", "LIFO", "Weighted Average", "Inventory Errors"]
+        },
+        {
+          "id": "acc_005",
+          "name": "Analysis & Interpretation",
+          "subtopics": ["Ratios", "Trend Analysis", "Comparative Statements", "Performance Evaluation"]
+        }
+      ]
+    },
+    {
+      "id": "commerce",
+      "name": "Commerce",
+      "icon": "🛒",
+      "exams": ["WAEC", "NECO"],
+      "topics": 25,
+      "free": false,
+      "description": "Business and commerce principles",
+      "topics_list": [
+        {
+          "id": "comm_001",
+          "name": "Business Fundamentals",
+          "subtopics": ["Business Types", "Ownership", "Location", "Size & Scope"]
+        },
+        {
+          "id": "comm_002",
+          "name": "Marketing",
+          "subtopics": ["Market Research", "Product", "Price", "Place", "Promotion"]
+        },
+        {
+          "id": "comm_003",
+          "name": "Trade & Distribution",
+          "subtopics": ["Wholesale", "Retail", "Supply Chain", "Logistics"]
+        },
+        {
+          "id": "comm_004",
+          "name": "Business Finance",
+          "subtopics": ["Capital", "Financing", "Profitability", "Investment"]
+        },
+        {
+          "id": "comm_005",
+          "name": "Business Management",
+          "subtopics": ["Planning", "Organization", "Leadership", "Control"]
+        }
+      ]
+    },
+    {
+      "id": "agric",
+      "name": "Agricultural Science",
+      "icon": "🌾",
+      "exams": ["WAEC", "NECO", "JAMB"],
+      "topics": 35,
+      "free": false,
+      "description": "Agriculture and crop/animal science",
+      "topics_list": [
+        {
+          "id": "agr_001",
+          "name": "Soil Science",
+          "subtopics": ["Soil Formation", "Soil Types", "Soil Properties", "Soil Testing", "Soil Management"]
+        },
+        {
+          "id": "agr_002",
+          "name": "Crop Production",
+          "subtopics": ["Cereals", "Legumes", "Root Crops", "Cash Crops", "Horticulture"]
+        },
+        {
+          "id": "agr_003",
+          "name": "Animal Production",
+          "subtopics": ["Livestock", "Poultry", "Fisheries", "Breeding", "Animal Nutrition"]
+        },
+        {
+          "id": "agr_004",
+          "name": "Agricultural Economics",
+          "subtopics": ["Farm Management", "Cost Analysis", "Marketing", "Farm Records"]
+        },
+        {
+          "id": "agr_005",
+          "name": "Agricultural Technology",
+          "subtopics": ["Farm Machinery", "Irrigation", "Pest Control", "Organic Farming"]
+        }
+      ]
+    },
+    {
+      "id": "crs",
+      "name": "Christian Religious Studies",
+      "icon": "✝️",
+      "exams": ["WAEC", "NECO", "JAMB"],
+      "topics": 30,
+      "free": false,
+      "description": "Christian theology and biblical studies",
+      "topics_list": [
+        {
+          "id": "crs_001",
+          "name": "Old Testament",
+          "subtopics": ["Creation & Fall", "Abraham's Covenant", "Exodus", "Prophets", "Wisdom Literature"]
+        },
+        {
+          "id": "crs_002",
+          "name": "New Testament",
+          "subtopics": ["Birth of Jesus", "Ministry & Teachings", "Passion & Resurrection", "Apostolic Age"]
+        },
+        {
+          "id": "crs_003",
+          "name": "Christian Theology",
+          "subtopics": ["God", "Trinity", "Salvation", "Holy Spirit", "Church"]
+        },
+        {
+          "id": "crs_004",
+          "name": "Christian Ethics",
+          "subtopics": ["Morality", "Family Values", "Social Responsibility", "Justice & Peace"]
+        },
+        {
+          "id": "crs_005",
+          "name": "Church History",
+          "subtopics": ["Early Church", "Medieval Church", "Reformation", "African Christianity"]
+        }
+      ]
+    },
+    {
+      "id": "irs",
+      "name": "Islamic Religious Studies",
+      "icon": "☪️",
+      "exams": ["WAEC", "NECO", "JAMB"],
+      "topics": 30,
+      "free": false,
+      "description": "Islamic theology and quranic studies",
+      "topics_list": [
+        {
+          "id": "irs_001",
+          "name": "Quran & Hadith",
+          "subtopics": ["Quran Structure", "Revelation", "Hadith Collections", "Interpretation"]
+        },
+        {
+          "id": "irs_002",
+          "name": "Prophet Muhammad",
+          "subtopics": ["Early Life", "Ministry", "Hijrah", "Companions", "Legacy"]
+        },
+        {
+          "id": "irs_003",
+          "name": "Islamic Beliefs",
+          "subtopics": ["Monotheism", "Angels", "Prophets", "Divine Books", "Day of Judgment"]
+        },
+        {
+          "id": "irs_004",
+          "name": "Islamic Practices",
+          "subtopics": ["Five Pillars", "Prayer", "Fasting", "Charity", "Pilgrimage"]
+        },
+        {
+          "id": "irs_005",
+          "name": "Islamic Ethics & Society",
+          "subtopics": ["Moral Principles", "Family", "Justice", "Social Responsibility"]
+        }
+      ]
+    },
+    {
+      "id": "history",
+      "name": "History",
+      "icon": "📜",
+      "exams": ["WAEC", "NECO", "JAMB"],
+      "topics": 36,
+      "free": false,
+      "description": "World and African history",
+      "topics_list": [
+        {
+          "id": "hist_001",
+          "name": "African History",
+          "subtopics": ["Ancient Africa", "Kingdoms & Empires", "Colonial Period", "Independence", "Modern Africa"]
+        },
+        {
+          "id": "hist_002",
+          "name": "Nigerian History",
+          "subtopics": ["Pre-colonial Nigeria", "Slave Trade", "Colonial Rule", "Independence", "Post-Colonial"]
+        },
+        {
+          "id": "hist_003",
+          "name": "World History",
+          "subtopics": ["Ancient Civilizations", "Medieval Period", "Renaissance", "Industrial Revolution", "Modern Era"]
+        },
+        {
+          "id": "hist_004",
+          "name": "20th Century History",
+          "subtopics": ["World War I", "Inter-war Period", "World War II", "Cold War", "Decolonization"]
+        },
+        {
+          "id": "hist_005",
+          "name": "Historical Methods",
+          "subtopics": ["Primary Sources", "Secondary Sources", "Historiography", "Evidence Evaluation"]
+        }
+      ]
+    },
+    {
+      "id": "geography",
+      "name": "Geography",
+      "icon": "🗺️",
+      "exams": ["WAEC", "NECO", "JAMB"],
+      "topics": 40,
+      "free": false,
+      "description": "Physical and human geography",
+      "topics_list": [
+        {
+          "id": "geo_001",
+          "name": "Physical Geography",
+          "subtopics": ["Earth Structure", "Weather & Climate", "Landforms", "Vegetation", "Soils & Water"]
+        },
+        {
+          "id": "geo_002",
+          "name": "Human Geography",
+          "subtopics": ["Population", "Culture", "Settlement", "Economic Activities", "Political Boundaries"]
+        },
+        {
+          "id": "geo_003",
+          "name": "Regional Geography",
+          "subtopics": ["Africa", "Nigeria", "Europe", "Americas", "Asia"]
+        },
+        {
+          "id": "geo_004",
+          "name": "Environmental Geography",
+          "subtopics": ["Climate Change", "Deforestation", "Desertification", "Pollution", "Conservation"]
+        },
+        {
+          "id": "geo_005",
+          "name": "Map Skills",
+          "subtopics": ["Map Reading", "Scale", "Symbols", "Direction", "Coordinates"]
+        }
+      ]
+    },
+    {
+      "id": "french",
+      "name": "French Language",
+      "icon": "🇫🇷",
+      "exams": ["WAEC", "NECO", "JAMB"],
+      "topics": 32,
+      "free": false,
+      "description": "French language for West African exams",
+      "topics_list": [
+        {
+          "id": "fr_001",
+          "name": "Grammar",
+          "subtopics": ["Nouns & Articles", "Adjectives", "Verbs", "Pronouns", "Prepositions"]
+        },
+        {
+          "id": "fr_002",
+          "name": "Vocabulary",
+          "subtopics": ["Common Expressions", "Everyday Words", "Technical Terms", "Idioms"]
+        },
+        {
+          "id": "fr_003",
+          "name": "Listening Comprehension",
+          "subtopics": ["Understanding Speech", "Dialogues", "Interviews", "Announcements"]
+        },
+        {
+          "id": "fr_004",
+          "name": "Speaking & Conversation",
+          "subtopics": ["Pronunciation", "Dialogues", "Presentations", "Discussions"]
+        },
+        {
+          "id": "fr_005",
+          "name": "Writing Skills",
+          "subtopics": ["Essays", "Letters", "Reports", "Creative Writing"]
+        }
+      ]
+    },
+    {
+      "id": "data_processing",
+      "name": "Data Processing/ICT",
+      "icon": "💻",
+      "exams": ["WAEC", "NECO"],
+      "topics": 28,
+      "free": false,
+      "description": "Information & communication technology",
+      "topics_list": [
+        {
+          "id": "ict_001",
+          "name": "Computer Basics",
+          "subtopics": ["Hardware", "Software", "Operating Systems", "File Management"]
+        },
+        {
+          "id": "ict_002",
+          "name": "Applications",
+          "subtopics": ["Word Processing", "Spreadsheets", "Databases", "Presentations"]
+        },
+        {
+          "id": "ict_003",
+          "name": "Internet & Networking",
+          "subtopics": ["Email", "Web Browsing", "Online Safety", "Networks", "Cloud Computing"]
+        },
+        {
+          "id": "ict_004",
+          "name": "Programming Basics",
+          "subtopics": ["Programming Concepts", "Algorithms", "Basic Coding", "Problem Solving"]
+        },
+        {
+          "id": "ict_005",
+          "name": "Digital Literacy",
+          "subtopics": ["Cybersecurity", "Data Protection", "Digital Ethics", "Emerging Technologies"]
+        }
+      ]
+    }
+  ]
+}
