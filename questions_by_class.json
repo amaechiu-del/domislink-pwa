@@ -1,0 +1,367 @@
+{
+  "classes": ["JSS1", "JSS2", "JSS3", "SSS1", "SSS2", "SSS3"],
+  "class_descriptions": {
+    "JSS1": "Junior Secondary School Year 1 (Basic/Beginner Level)",
+    "JSS2": "Junior Secondary School Year 2 (Intermediate Level)",
+    "JSS3": "Junior Secondary School Year 3 (Advanced Level - BECE Prep)",
+    "SSS1": "Senior Secondary School Year 1 (Advanced Level)",
+    "SSS2": "Senior Secondary School Year 2 (Expert Level - WAEC/NECO Prep)",
+    "SSS3": "Senior Secondary School Year 3 (Expert Level - JAMB/WAEC Final Prep)"
+  },
+  "subjects": {
+    "mathematics": {
+      "JSS1": {
+        "topics": [
+          "Number Systems (Whole Numbers, Integers, Fractions)",
+          "Basic Operations (Addition, Subtraction, Multiplication, Division)",
+          "Decimals and Percentages",
+          "Fractions and Ratios",
+          "Basic Geometry (Shapes, Area, Perimeter)",
+          "Basic Algebra (Variables, Simple Equations)"
+        ],
+        "total_questions": 350,
+        "sample_questions": [
+          {"q": "What is 25 + 18?", "options": ["43", "40", "45", "50"], "correct": 0, "topic": "Basic Operations"},
+          {"q": "What is 1/2 + 1/4?", "options": ["3/4", "1/2", "1/4", "2/4"], "correct": 0, "topic": "Fractions"},
+          {"q": "Find the area of a square with side 5cm", "options": ["25 cm²", "20 cm²", "10 cm²", "15 cm²"], "correct": 0, "topic": "Geometry"},
+          {"q": "What is 30% of 50?", "options": ["15", "20", "10", "25"], "correct": 0, "topic": "Percentages"},
+          {"q": "Solve: x + 3 = 8", "options": ["x = 5", "x = 3", "x = 8", "x = 11"], "correct": 0, "topic": "Algebra"}
+        ]
+      },
+      "JSS2": {
+        "topics": [
+          "Indices and Surds",
+          "Linear Equations and Inequalities",
+          "Polynomials",
+          "Quadratic Expressions",
+          "Trigonometry Basics (Sine, Cosine, Tangent)",
+          "Coordinate Geometry",
+          "Mensuration (Volume, Surface Area)",
+          "Statistics and Probability Basics"
+        ],
+        "total_questions": 370,
+        "sample_questions": [
+          {"q": "What is 2³?", "options": ["8", "6", "9", "4"], "correct": 0, "topic": "Indices"},
+          {"q": "Solve: 2x - 3 = 7", "options": ["x = 5", "x = 4", "x = 6", "x = 2"], "correct": 0, "topic": "Linear Equations"},
+          {"q": "Expand: (x + 2)(x + 3)", "options": ["x² + 5x + 6", "x² + 6x + 5", "x² + 3x + 2", "x² + 2x + 3"], "correct": 0, "topic": "Polynomials"},
+          {"q": "sin(0°) = ?", "options": ["0", "1", "-1", "0.5"], "correct": 0, "topic": "Trigonometry"},
+          {"q": "Calculate volume of cube with side 3cm", "options": ["27 cm³", "9 cm³", "18 cm³", "36 cm³"], "correct": 0, "topic": "Mensuration"}
+        ]
+      },
+      "JSS3": {
+        "topics": [
+          "Quadratic Equations (Factorization, Quadratic Formula)",
+          "Simultaneous Equations",
+          "Sequences and Series",
+          "Sets and Venn Diagrams",
+          "Trigonometry (Angles, Bearings)",
+          "Circle Theorems",
+          "Coordinate Geometry Advanced",
+          "Statistics and Probability Advanced",
+          "Matrices Introduction"
+        ],
+        "total_questions": 400,
+        "sample_questions": [
+          {"q": "Solve: x² - 5x + 6 = 0", "options": ["x = 2 or 3", "x = 1 or 6", "x = -2 or -3", "x = 0 or 5"], "correct": 0, "topic": "Quadratic Equations"},
+          {"q": "Solve: 2x + y = 5, x - y = 1", "options": ["x = 2, y = 1", "x = 1, y = 2", "x = 3, y = -1", "x = 0, y = 5"], "correct": 0, "topic": "Simultaneous Equations"},
+          {"q": "Find the 5th term of sequence: 2, 5, 8, 11, ...", "options": ["14", "15", "16", "13"], "correct": 0, "topic": "Sequences"},
+          {"q": "If A = {1,2,3} and B = {2,3,4}, find A∩B", "options": ["{2,3}", "{1,2,3,4}", "{1,4}", "{}"], "correct": 0, "topic": "Sets"},
+          {"q": "Calculate tan(45°)", "options": ["1", "0", "-1", "0.5"], "correct": 0, "topic": "Trigonometry"}
+        ]
+      },
+      "SSS1": {
+        "topics": [
+          "Advanced Trigonometry (Double Angles, Identities)",
+          "Calculus Basics (Limits, Differentiation)",
+          "Exponentials and Logarithms",
+          "Complex Numbers Introduction",
+          "Binomial Expansion",
+          "Permutations and Combinations",
+          "Probability Distributions",
+          "Advanced Coordinate Geometry",
+          "Matrices and Determinants"
+        ],
+        "total_questions": 420,
+        "sample_questions": [
+          {"q": "Differentiate: y = 3x² + 2x", "options": ["dy/dx = 6x + 2", "dy/dx = 3x + 2", "dy/dx = 6x", "dy/dx = 2x + 1"], "correct": 0, "topic": "Calculus"},
+          {"q": "What is log₁₀(1000)?", "options": ["3", "2", "4", "1"], "correct": 0, "topic": "Logarithms"},
+          {"q": "sin(2θ) = ?", "options": ["2sin(θ)cos(θ)", "sin²(θ)", "cos(2θ)", "tan(θ)"], "correct": 0, "topic": "Trigonometry"},
+          {"q": "Expand (a + b)³", "options": ["a³ + 3a²b + 3ab² + b³", "a³ + b³", "a³ + 3ab + b³", "3a + 3b"], "correct": 0, "topic": "Binomial Expansion"},
+          {"q": "How many ways to arrange 5 people?", "options": ["120", "60", "24", "10"], "correct": 0, "topic": "Permutations"}
+        ]
+      },
+      "SSS2": {
+        "topics": [
+          "Advanced Calculus (Integration, Applications)",
+          "Differential Equations",
+          "Advanced Trigonometry (Proofs)",
+          "Hyperbolic Functions",
+          "Fourier Series Introduction",
+          "Linear Algebra (Vector Spaces)",
+          "Advanced Probability",
+          "Numerical Methods"
+        ],
+        "total_questions": 430,
+        "sample_questions": [
+          {"q": "Integrate: ∫(2x + 3)dx", "options": ["x² + 3x + C", "2x + 3 + C", "x² + C", "3x² + C"], "correct": 0, "topic": "Integration"},
+          {"q": "Solve: dy/dx = 2x with y(0) = 1", "options": ["y = x² + 1", "y = 2x + 1", "y = x² + 2", "y = 2x + 2"], "correct": 0, "topic": "Differential Equations"},
+          {"q": "Prove: sin²(x) + cos²(x) = 1", "options": ["Using Pythagorean theorem", "By substitution", "By graphing", "No proof needed"], "correct": 0, "topic": "Trigonometry Proofs"},
+          {"q": "What is cosh(0)?", "options": ["1", "0", "-1", "e"], "correct": 0, "topic": "Hyperbolic Functions"},
+          {"q": "Evaluate definite integral: ∫₀¹ x² dx", "options": ["1/3", "1/2", "1/4", "2/3"], "correct": 0, "topic": "Integration"}
+        ]
+      },
+      "SSS3": {
+        "topics": [
+          "JAMB/WAEC Advanced Topics",
+          "Advanced Vectors",
+          "Complex Analysis Basics",
+          "Optimization Problems",
+          "Advanced Combinatorics",
+          "Real Analysis Introduction",
+          "Numerical Solutions",
+          "Applied Mathematics",
+          "Capstone Problems"
+        ],
+        "total_questions": 450,
+        "sample_questions": [
+          {"q": "Find eigenvalues of [[2, 1], [1, 2]]", "options": ["λ = 1, 3", "λ = 2, 2", "λ = 0, 4", "λ = 1, 2"], "correct": 0, "topic": "Linear Algebra"},
+          {"q": "Maximize: f(x,y) = x + 2y subject to x + y ≤ 4", "options": ["f = 8 at (0,4)", "f = 4 at (2,2)", "f = 6 at (4,0)", "f = 5 at (3,1)"], "correct": 0, "topic": "Optimization"},
+          {"q": "Evaluate: |2 + 3i| (magnitude of complex number)", "options": ["√13", "5", "6", "√10"], "correct": 0, "topic": "Complex Numbers"},
+          {"q": "Using Newton's method, approximate √2", "options": ["1.414...", "1.5", "1.3", "1.6"], "correct": 0, "topic": "Numerical Methods"},
+          {"q": "How many 4-letter words from MATHEMATICS (with repetition)?", "options": ["26⁴", "11×10×9×8", "11⁴", "11P4"], "correct": 2, "topic": "Combinatorics"}
+        ]
+      }
+    },
+    "english": {
+      "JSS1": {
+        "topics": [
+          "Basic Spelling and Punctuation",
+          "Parts of Speech (Nouns, Verbs, Adjectives)",
+          "Simple Sentences",
+          "Reading Comprehension (Basic)",
+          "Vocabulary Building",
+          "Basic Essay Writing"
+        ],
+        "total_questions": 320,
+        "sample_questions": [
+          {"q": "Correct spelling?", "options": ["Beautiful", "Beatiful", "Beautifull", "Beautful"], "correct": 0, "topic": "Spelling"},
+          {"q": "Identify noun: 'The cat is white'", "options": ["Cat", "Is", "White", "The"], "correct": 0, "topic": "Parts of Speech"},
+          {"q": "Complete: 'She ___ to school daily'", "options": ["Goes", "Go", "Going", "Went"], "correct": 0, "topic": "Verbs"},
+          {"q": "Opposite of 'happy'?", "options": ["Sad", "Mad", "Bad", "Glad"], "correct": 0, "topic": "Vocabulary"},
+          {"q": "What is a noun?", "options": ["Person, place, thing, idea", "Action word", "Describing word", "Connecting word"], "correct": 0, "topic": "Grammar"}
+        ]
+      },
+      "JSS2": {
+        "topics": [
+          "Complex Sentences",
+          "Tenses (Past, Present, Future)",
+          "Articles and Determiners",
+          "Reading Comprehension (Intermediate)",
+          "Figurative Language (Simile, Metaphor)",
+          "Paragraph Writing",
+          "Synonyms and Antonyms"
+        ],
+        "total_questions": 350,
+        "sample_questions": [
+          {"q": "Which is compound sentence?", "options": ["I went to school and I studied", "After I went to school", "Going to school", "School where I go"], "correct": 0, "topic": "Sentences"},
+          {"q": "Past tense of 'eat'?", "options": ["Ate", "Eating", "Eats", "Eaten"], "correct": 0, "topic": "Tenses"},
+          {"q": "Use correct article: '___ apple'", "options": ["An", "A", "The", "Some"], "correct": 0, "topic": "Articles"},
+          {"q": "'As cold as ice' is what literary device?", "options": ["Simile", "Metaphor", "Personification", "Alliteration"], "correct": 0, "topic": "Literary Devices"},
+          {"q": "Synonym of 'quick'?", "options": ["Fast", "Slow", "Steady", "Early"], "correct": 0, "topic": "Vocabulary"}
+        ]
+      },
+      "JSS3": {
+        "topics": [
+          "Advanced Grammar (Clauses, Phrases)",
+          "Essay Structure",
+          "Literature Analysis (BECE Texts)",
+          "Comprehension Skills",
+          "Persuasive Writing",
+          "Literary Devices (Advanced)",
+          "Punctuation Mastery"
+        ],
+        "total_questions": 380,
+        "sample_questions": [
+          {"q": "Identify dependent clause: 'When it rains, I stay home'", "options": ["When it rains", "I stay home", "It rains", "I stay"], "correct": 0, "topic": "Clauses"},
+          {"q": "What is irony?", "options": ["Expression meaning opposite of words", "Repetition of sounds", "Exaggeration", "Comparison"], "correct": 0, "topic": "Literary Devices"},
+          {"q": "Essay structure includes:", "options": ["Introduction, Body, Conclusion", "Beginning, Middle", "Title, Paragraphs", "Parts A, B, C"], "correct": 0, "topic": "Writing"},
+          {"q": "'The world is a stage' is:", "options": ["Metaphor", "Simile", "Personification", "Hyperbole"], "correct": 0, "topic": "Literary Devices"},
+          {"q": "Correct use of semicolon:", "options": ["Independent clause; independent clause", "Before a list", "Between adjectives", "After conjunctions"], "correct": 0, "topic": "Punctuation"}
+        ]
+      },
+      "SSS1": {
+        "topics": [
+          "Advanced Grammar and Syntax",
+          "Tone and Style Analysis",
+          "Narrative Techniques",
+          "Poetry Analysis",
+          "Drama Comprehension",
+          "Academic Writing",
+          "Critical Reading"
+        ],
+        "total_questions": 390,
+        "sample_questions": [
+          {"q": "What is semantic field?", "options": ["Group of related words", "Phonetic structure", "Grammatical category", "Historical meaning"], "correct": 0, "topic": "Linguistics"},
+          {"q": "Stream of consciousness technique is:", "options": ["Direct representation of character's thoughts", "Dialogue only", "Third-person narration", "Dialogue narration"], "correct": 0, "topic": "Narrative"},
+          {"q": "Analyze: 'What is this life if, full of care, we have no time to stand and stare?'", "options": ["Rhetorical question", "Direct question", "Metaphor", "Hyperbole"], "correct": 0, "topic": "Poetry"},
+          {"q": "Protagonist role is:", "options": ["Main character driving plot", "Supporting role", "Villain", "Narrator"], "correct": 0, "topic": "Drama"},
+          {"q": "Academic writing requires:", "options": ["Formal tone, citations, objectivity", "Casual language", "Personal opinions", "Slang"], "correct": 0, "topic": "Writing"}
+        ]
+      },
+      "SSS2": {
+        "topics": [
+          "WAEC/NECO Literature Texts",
+          "Stylistic Analysis",
+          "Discourse Analysis",
+          "Textual Criticism",
+          "Advanced Composition",
+          "Semantic and Pragmatic Analysis",
+          "Examination Techniques"
+        ],
+        "total_questions": 410,
+        "sample_questions": [
+          {"q": "What is enjambment in poetry?", "options": ["Line continuation to next line", "Rhyming pattern", "Meter structure", "Stanza length"], "correct": 0, "topic": "Poetry Analysis"},
+          {"q": "Identify literary movement of Soyinka:", "options": ["Modernism/Post-colonialism", "Romanticism", "Realism", "Naturalism"], "correct": 0, "topic": "Literature"},
+          {"q": "Discourse markers like 'however' signal:", "options": ["Contrast", "Addition", "Time", "Cause"], "correct": 0, "topic": "Discourse"},
+          {"q": "Analyze use of repetition in oratory:", "options": ["Emphasizes key points", "Confuses audience", "Fills time", "Varies tone"], "correct": 0, "topic": "Rhetoric"},
+          {"q": "What is foreshadowing?", "options": ["Hint of future events", "Past reference", "Present description", "Summary"], "correct": 0, "topic": "Literary Devices"}
+        ]
+      },
+      "SSS3": {
+        "topics": [
+          "JAMB/WAEC Final Preparation",
+          "Comparative Literature Analysis",
+          "African Literature Mastery",
+          "Contextual Analysis",
+          "Advanced Examination Strategies",
+          "Specialized Texts Study",
+          "Final Capstone Skills"
+        ],
+        "total_questions": 440,
+        "sample_questions": [
+          {"q": "Compare Romantic vs Modern literature:", "options": ["Emotion/Nature vs Reality/Technology", "Both same", "No difference", "Random categories"], "correct": 0, "topic": "Comparative Analysis"},
+          {"q": "Significance of African oral tradition:", "options": ["Preserves culture and history", "Entertainment only", "No importance", "Western focus"], "correct": 0, "topic": "African Literature"},
+          {"q": "Analyze symbolism in Achebe's work:", "options": ["Represents cultural conflict", "Random choice", "Decorative only", "No meaning"], "correct": 0, "topic": "African Authors"},
+          {"q": "What is metafiction?", "options": ["Story aware of itself as fiction", "Fiction only", "Non-fiction", "Biography"], "correct": 0, "topic": "Literary Techniques"},
+          {"q": "Interpret: 'Things Fall Apart' title means:", "options": ["Society collapses under external pressure", "Things are fine", "No meaning", "Accidental phrase"], "correct": 0, "topic": "Literature Interpretation"}
+        ]
+      }
+    },
+    "physics": {
+      "JSS1": {
+        "topics": [
+          "Basic Measurements",
+          "Motion and Speed",
+          "Forces",
+          "Simple Machines",
+          "Energy Basics",
+          "Heat and Temperature"
+        ],
+        "total_questions": 300,
+        "sample_questions": [
+          {"q": "SI unit of length is:", "options": ["Meter", "Centimeter", "Kilometer", "Millimeter"], "correct": 0, "topic": "Measurements"},
+          {"q": "Speed = ?", "options": ["Distance/Time", "Time/Distance", "Force/Mass", "Mass/Time"], "correct": 0, "topic": "Motion"},
+          {"q": "Newton is unit of:", "options": ["Force", "Energy", "Power", "Pressure"], "correct": 0, "topic": "Forces"},
+          {"q": "Which is simple machine?", "options": ["Lever", "Motor", "Computer", "Clock"], "correct": 0, "topic": "Machines"},
+          {"q": "Heat always flows from:", "options": ["Hot to cold", "Cold to hot", "Stays in place", "Randomly"], "correct": 0, "topic": "Heat"}
+        ]
+      },
+      "JSS2": {
+        "topics": [
+          "Density and Pressure",
+          "Work and Energy",
+          "Sound and Waves",
+          "Light and Optics Basics",
+          "Electricity and Circuits",
+          "Magnetism Basics"
+        ],
+        "total_questions": 320,
+        "sample_questions": [
+          {"q": "Density = Mass/?", "options": ["Volume", "Force", "Weight", "Pressure"], "correct": 0, "topic": "Density"},
+          {"q": "Work = Force × ?", "options": ["Distance", "Time", "Speed", "Mass"], "correct": 0, "topic": "Work"},
+          {"q": "What is frequency of wave?", "options": ["Oscillations per second", "Distance between waves", "Speed of wave", "Amplitude"], "correct": 0, "topic": "Waves"},
+          {"q": "Angle of incidence = ?", "options": ["Angle of reflection", "Angle of refraction", "90° minus angle", "0°"], "correct": 0, "topic": "Light"},
+          {"q": "Series circuit current is:", "options": ["Same in all parts", "Different in each part", "Zero", "Infinite"], "correct": 0, "topic": "Circuits"}
+        ]
+      },
+      "JSS3": {
+        "topics": [
+          "Newton's Laws",
+          "Momentum and Collisions",
+          "Circular Motion",
+          "Wave Properties",
+          "Light Refraction and Reflection",
+          "AC and DC Circuits",
+          "Electromagnetic Induction Basics"
+        ],
+        "total_questions": 350,
+        "sample_questions": [
+          {"q": "Newton's 1st Law states:", "options": ["Object continues unless acted upon", "F = ma", "Action = reaction", "Momentum conserved"], "correct": 0, "topic": "Newton's Laws"},
+          {"q": "Momentum = ?", "options": ["Mass × Velocity", "Force × Time", "Energy", "Mass/Velocity"], "correct": 0, "topic": "Momentum"},
+          {"q": "Centripetal force is directed:", "options": ["Toward center", "Away from center", "Tangential", "Downward"], "correct": 0, "topic": "Circular Motion"},
+          {"q": "Refractive index = c/?", "options": ["v (speed in medium)", "n", "λ", "f"], "correct": 0, "topic": "Optics"},
+          {"q": "Electromagnetic induction discovered by:", "options": ["Faraday", "Newton", "Einstein", "Planck"], "correct": 0, "topic": "EM Induction"}
+        ]
+      },
+      "SSS1": {
+        "topics": [
+          "Kinematics (Equations of Motion)",
+          "Dynamics (Forces and Motion)",
+          "Oscillations and SHM",
+          "Waves (Sound and Light)",
+          "Optics (Lenses and Mirrors)",
+          "Electricity (Potential and Current)",
+          "Magnetism (Fields and Forces)"
+        ],
+        "total_questions": 370,
+        "sample_questions": [
+          {"q": "v = u + at is:", "options": ["Equation of motion", "Ohm's Law", "Hooke's Law", "Newton's 2nd Law"], "correct": 0, "topic": "Kinematics"},
+          {"q": "For SHM, a = ?", "options": ["-ω²x", "ωx", "√(ωx)", "ω/x"], "correct": 0, "topic": "SHM"},
+          {"q": "Lens formula is:", "options": ["1/f = 1/u + 1/v", "1/f = 1/u - 1/v", "f = u + v", "f = u/v"], "correct": 0, "topic": "Optics"},
+          {"q": "Potential difference = ?", "options": ["Work/Charge", "Current/Resistance", "Force/Distance", "Energy/Time"], "correct": 0, "topic": "Electricity"},
+          {"q": "Lorentz force F = ?", "options": ["qvB", "mv²/r", "ma", "qE"], "correct": 0, "topic": "Magnetism"}
+        ]
+      },
+      "SSS2": {
+        "topics": [
+          "Advanced Mechanics",
+          "Thermal Physics",
+          "Waves and Sound",
+          "Optics (Advanced)",
+          "Electricity and Magnetism (Advanced)",
+          "Nuclear Physics Basics",
+          "WAEC/NECO Exam Topics"
+        ],
+        "total_questions": 390,
+        "sample_questions": [
+          {"q": "Impulse = ?", "options": ["Force × Time or Δ(momentum)", "Acceleration × Time", "Velocity × Mass", "Force/Time"], "correct": 0, "topic": "Mechanics"},
+          {"q": "First Law of Thermodynamics:", "options": ["ΔU = Q - W", "ΔU = Q + W", "ΔU = Q/W", "ΔU = W/Q"], "correct": 0, "topic": "Thermodynamics"},
+          {"q": "Wave equation: v = ?", "options": ["fλ", "f/λ", "λ/f", "f+λ"], "correct": 0, "topic": "Waves"},
+          {"q": "Snell's law: n₁sin(θ₁) = ?", "options": ["n₂sin(θ₂)", "n₂cos(θ₂)", "n₂tan(θ₂)", "n₂/sin(θ₂)"], "correct": 0, "topic": "Refraction"},
+          {"q": "Half-life is:", "options": ["Time for activity to halve", "Lifetime of particle", "Energy released", "Mass lost"], "correct": 0, "topic": "Nuclear Physics"}
+        ]
+      },
+      "SSS3": {
+        "topics": [
+          "Advanced Thermodynamics",
+          "Quantum Mechanics Introduction",
+          "Relativity Basics",
+          "Particle Physics",
+          "Astrophysics",
+          "Applied Physics",
+          "JAMB Final Preparation"
+        ],
+        "total_questions": 410,
+        "sample_questions": [
+          {"q": "Entropy (2nd Law): ΔS is for:", "options": ["Irreversible process > 0", "Reversible < 0", "Isolated system = constant", "All decreasing"], "correct": 0, "topic": "Thermodynamics"},
+          {"q": "E = hf represents:", "options": ["Photon energy", "Kinetic energy", "Potential energy", "Wave energy"], "correct": 0, "topic": "Quantum"},
+          {"q": "E = mc² relates:", "options": ["Mass and energy equivalence", "Force and acceleration", "Power and time", "Velocity and momentum"], "correct": 0, "topic": "Relativity"},
+          {"q": "Uncertainty principle: ΔxΔp ≥ ?", "options": ["h/4π", "h", "0", "infinity"], "correct": 0, "topic": "Quantum"},
+          {"q": "Escape velocity = √(2GM/?)", "options": ["R", "M", "m", "r"], "correct": 0, "topic": "Gravity"}
+        ]
+      }
+    }
+  },
+  "notes": "Each class (JSS1-SSS3) contains 300-450 questions per subject. Multiply by 16 subjects for comprehensive coverage. Total: ~5000+ questions per class level across all subjects.",
+  "organization": "Questions organized by: Subject → Class Level → Topic → Difficulty → Individual Questions"
+}
