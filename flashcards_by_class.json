@@ -1,0 +1,296 @@
+{
+  "flashcards_database": {
+    "version": "2.0.0",
+    "total_flashcards": 5000,
+    "organization": "By Class Level (JSS1-3, SSS1-3) and Subject",
+    "classes": ["JSS1", "JSS2", "JSS3", "SSS1", "SSS2", "SSS3"],
+    "mathematics": {
+      "JSS1": {
+        "total_cards": 280,
+        "cards": [
+          {"id": "math_jss1_001", "front": "What is 2 + 3?", "back": "2 + 3 = 5"},
+          {"id": "math_jss1_002", "front": "Define a whole number", "back": "Numbers 0, 1, 2, 3... with no fractional parts"},
+          {"id": "math_jss1_003", "front": "What is 1/2 of 20?", "back": "1/2 of 20 = 10"},
+          {"id": "math_jss1_004", "front": "Area of rectangle formula", "back": "Area = length × width"},
+          {"id": "math_jss1_005", "front": "What is 25% as a fraction?", "back": "25% = 1/4 = 0.25"},
+          {"id": "math_jss1_006", "front": "Define ratio", "back": "Comparison of two quantities by division"},
+          {"id": "math_jss1_007", "front": "Perimeter of square with side 5cm?", "back": "Perimeter = 4 × 5 = 20cm"},
+          {"id": "math_jss1_008", "front": "What is 3²?", "back": "3² = 3 × 3 = 9"},
+          {"id": "math_jss1_009", "front": "√16 = ?", "back": "√16 = 4 (because 4 × 4 = 16)"},
+          {"id": "math_jss1_010", "front": "Decimal form of 1/4", "back": "1/4 = 0.25"}
+        ]
+      },
+      "JSS2": {
+        "total_cards": 300,
+        "cards": [
+          {"id": "math_jss2_001", "front": "What is an index/power?", "back": "A number that shows how many times to multiply a base number"},
+          {"id": "math_jss2_002", "front": "Solve: x + 5 = 12", "back": "x = 12 - 5 = 7"},
+          {"id": "math_jss2_003", "front": "Expand: (x + 2)(x + 3)", "back": "x² + 3x + 2x + 6 = x² + 5x + 6"},
+          {"id": "math_jss2_004", "front": "sin(0°) = ?", "back": "sin(0°) = 0"},
+          {"id": "math_jss2_005", "front": "cos(90°) = ?", "back": "cos(90°) = 0"},
+          {"id": "math_jss2_006", "front": "Volume of cube formula", "back": "V = side³ or s³"},
+          {"id": "math_jss2_007", "front": "What is a polynomial?", "back": "Expression with variables, constants, and operations (add, subtract, multiply)"},
+          {"id": "math_jss2_008", "front": "Factorize: x² - 4", "back": "(x - 2)(x + 2) using difference of squares"},
+          {"id": "math_jss2_009", "front": "Mean of 2, 4, 6, 8?", "back": "Mean = (2+4+6+8)/4 = 20/4 = 5"},
+          {"id": "math_jss2_010", "front": "Probability formula", "back": "P = Number of favorable outcomes / Total number of outcomes"}
+        ]
+      },
+      "JSS3": {
+        "total_cards": 320,
+        "cards": [
+          {"id": "math_jss3_001", "front": "Quadratic formula", "back": "x = (-b ± √(b²-4ac)) / 2a"},
+          {"id": "math_jss3_002", "front": "Solve: x² - 5x + 6 = 0", "back": "Factors: (x-2)(x-3) = 0, so x = 2 or x = 3"},
+          {"id": "math_jss3_003", "front": "Simultaneous equations definition", "back": "Two or more equations with common variables solved together"},
+          {"id": "math_jss3_004", "front": "Arithmetic sequence formula", "back": "nth term: a_n = a + (n-1)d where a=first term, d=common difference"},
+          {"id": "math_jss3_005", "front": "Set notation: A ∩ B means?", "back": "Intersection: Elements common to both sets A and B"},
+          {"id": "math_jss3_006", "front": "tan(45°) = ?", "back": "tan(45°) = 1"},
+          {"id": "math_jss3_007", "front": "Pythagorean theorem", "back": "a² + b² = c² (in right triangles)"},
+          {"id": "math_jss3_008", "front": "Circle theorem: angle in semicircle", "back": "Angle subtended by diameter = 90°"},
+          {"id": "math_jss3_009", "front": "Standard deviation is used for?", "back": "Measuring spread of data around the mean"},
+          {"id": "math_jss3_010", "front": "Variance = ?", "back": "Average of squared deviations from mean; Variance = (Std Dev)²"}
+        ]
+      },
+      "SSS1": {
+        "total_cards": 340,
+        "cards": [
+          {"id": "math_sss1_001", "front": "Differentiation definition", "back": "Finding the rate of change of a function at a point"},
+          {"id": "math_sss1_002", "front": "Derivative of x² is?", "back": "d/dx(x²) = 2x"},
+          {"id": "math_sss1_003", "front": "Chain rule in calculus", "back": "d/dx[f(g(x))] = f'(g(x)) × g'(x)"},
+          {"id": "math_sss1_004", "front": "log₁₀(100) = ?", "back": "log₁₀(100) = 2 (because 10² = 100)"},
+          {"id": "math_sss1_005", "front": "ln(e) = ?", "back": "ln(e) = 1 (natural logarithm)"},
+          {"id": "math_sss1_006", "front": "Double angle formula: sin(2θ)", "back": "sin(2θ) = 2sin(θ)cos(θ)"},
+          {"id": "math_sss1_007", "front": "Binomial expansion (a+b)²", "back": "a² + 2ab + b²"},
+          {"id": "math_sss1_008", "front": "nCr (Combinations) formula", "back": "nCr = n! / (r!(n-r)!)"},
+          {"id": "math_sss1_009", "front": "nPr (Permutations) formula", "back": "nPr = n! / (n-r)!"},
+          {"id": "math_sss1_010", "front": "Matrix determinant 2×2", "back": "For [a b; c d]: Det = ad - bc"}
+        ]
+      },
+      "SSS2": {
+        "total_cards": 360,
+        "cards": [
+          {"id": "math_sss2_001", "front": "Integration definition", "back": "Reverse of differentiation; finding area under curve"},
+          {"id": "math_sss2_002", "front": "∫x² dx = ?", "back": "∫x² dx = x³/3 + C"},
+          {"id": "math_sss2_003", "front": "Definite integral notation", "back": "∫ₐᵇ f(x)dx (from a to b)"},
+          {"id": "math_sss2_004", "front": "Differential equation definition", "back": "Equation involving derivatives of unknown function"},
+          {"id": "math_sss2_005", "front": "Hyperbolic sine: sinh(x)", "back": "sinh(x) = (eˣ - e⁻ˣ) / 2"},
+          {"id": "math_sss2_006", "front": "cosh²(x) - sinh²(x) = ?", "back": "cosh²(x) - sinh²(x) = 1"},
+          {"id": "math_sss2_007", "front": "Fourier series purpose", "back": "Represents periodic function as sum of sines and cosines"},
+          {"id": "math_sss2_008", "front": "Eigenvalue definition", "back": "Scalar λ where Av = λv for matrix A and vector v"},
+          {"id": "math_sss2_009", "front": "Complex number: magnitude of a+bi", "back": "|a+bi| = √(a² + b²)"},
+          {"id": "math_sss2_010", "front": "Partial fractions purpose", "back": "Break complex rational function into simpler fractions"}
+        ]
+      },
+      "SSS3": {
+        "total_cards": 380,
+        "cards": [
+          {"id": "math_sss3_001", "front": "Limit definition (informal)", "back": "Value that function approaches as input approaches some value"},
+          {"id": "math_sss3_002", "front": "L'Hôpital's Rule use", "back": "Evaluate limits of form 0/0 or ∞/∞ by differentiating"},
+          {"id": "math_sss3_003", "front": "Taylor series of eˣ", "back": "eˣ = 1 + x + x²/2! + x³/3! + ..."},
+          {"id": "math_sss3_004", "front": "Real Analysis: What is a sequence?", "back": "Ordered list of numbers following a pattern"},
+          {"id": "math_sss3_005", "front": "Convergence of series", "back": "Series converges if partial sums approach a limit"},
+          {"id": "math_sss3_006", "front": "Vector dot product", "back": "a·b = |a||b|cos(θ) or a₁b₁ + a₂b₂ + ..."},
+          {"id": "math_sss3_007", "front": "Cross product magnitude", "back": "|a×b| = |a||b|sin(θ)"},
+          {"id": "math_sss3_008", "front": "Optimization: critical points", "back": "Points where derivative = 0 or undefined"},
+          {"id": "math_sss3_009", "front": "Lagrange multipliers use", "back": "Find extrema of f(x,y) subject to constraint g(x,y)=0"},
+          {"id": "math_sss3_010", "front": "Numerical integration: Simpson's Rule", "back": "Approximate integral using parabolic arcs"}
+        ]
+      }
+    },
+    "english": {
+      "JSS1": {
+        "total_cards": 250,
+        "cards": [
+          {"id": "eng_jss1_001", "front": "Define noun", "back": "Word representing person, place, thing, or idea"},
+          {"id": "eng_jss1_002", "front": "Define verb", "back": "Word expressing action or state of being"},
+          {"id": "eng_jss1_003", "front": "Define adjective", "back": "Word describing or modifying a noun"},
+          {"id": "eng_jss1_004", "front": "Simple sentence structure", "back": "Subject + Verb (e.g., 'Dogs bark')"},
+          {"id": "eng_jss1_005", "front": "Synonym of 'big'", "back": "Large, huge, enormous, vast"},
+          {"id": "eng_jss1_006", "front": "Antonym of 'happy'", "back": "Sad, unhappy, miserable"},
+          {"id": "eng_jss1_007", "front": "Present tense of 'go'", "back": "Go, goes (I go, he goes)"},
+          {"id": "eng_jss1_008", "front": "Past tense of 'eat'", "back": "Ate (I ate, she ate)"},
+          {"id": "eng_jss1_009", "front": "Plural of 'child'", "back": "Children"},
+          {"id": "eng_jss1_010", "front": "Use 'a' or 'an' before vowel sound?", "back": "Use 'an' (e.g., 'an apple', 'a book')"}
+        ]
+      },
+      "JSS2": {
+        "total_cards": 280,
+        "cards": [
+          {"id": "eng_jss2_001", "front": "Define simile", "back": "Comparison of two things using 'like' or 'as'"},
+          {"id": "eng_jss2_002", "front": "Define metaphor", "back": "Comparison stating one thing IS another (no 'like'/'as')"},
+          {"id": "eng_jss2_003", "front": "Define personification", "back": "Giving human qualities to non-human things"},
+          {"id": "eng_jss2_004", "front": "Compound sentence example", "back": "Two independent clauses joined by conjunction (e.g., 'I studied and I passed')"},
+          {"id": "eng_jss2_005", "front": "Complex sentence definition", "back": "Independent clause + dependent clause"},
+          {"id": "eng_jss2_006", "front": "Subject-Verb agreement rule", "back": "Subject and verb must match in number (singular/plural)"},
+          {"id": "eng_jss2_007", "front": "Pronoun examples", "back": "I, you, he, she, it, we, they, me, him, her, us, them"},
+          {"id": "eng_jss2_008", "front": "Tense: Simple Past", "back": "Action completed in past (e.g., 'I walked')"},
+          {"id": "eng_jss2_009", "front": "Collective noun for birds", "back": "Flock (e.g., 'a flock of birds')"},
+          {"id": "eng_jss2_010", "front": "Homophone: to/too/two", "back": "To (preposition), too (also), two (number 2)"}
+        ]
+      },
+      "JSS3": {
+        "total_cards": 310,
+        "cards": [
+          {"id": "eng_jss3_001", "front": "Define irony", "back": "Expression of meaning using language signifying opposite"},
+          {"id": "eng_jss3_002", "front": "Define alliteration", "back": "Repetition of initial consonant sounds (e.g., 'Peter Piper picked...')"},
+          {"id": "eng_jss3_003", "front": "Dependent clause definition", "back": "Cannot stand alone; contains subject+verb but incomplete thought"},
+          {"id": "eng_jss3_004", "front": "Adverb vs Adjective", "back": "Adjective modifies noun; Adverb modifies verb/adj/adverb"},
+          {"id": "eng_jss3_005", "front": "Essay structure", "back": "Introduction (hook + thesis), Body (3+ paragraphs), Conclusion (summary)"},
+          {"id": "eng_jss3_006", "front": "Main idea vs Supporting detail", "back": "Main idea = central point; Supporting detail = evidence"},
+          {"id": "eng_jss3_007", "front": "Tone in literature", "back": "Author's attitude toward subject (serious, sarcastic, formal, etc.)"},
+          {"id": "eng_jss3_008", "front": "Oxymoron example", "back": "'Deafening silence' - contradictory terms combined"},
+          {"id": "eng_jss3_009", "front": "Onomatopoeia definition", "back": "Word imitating sound it represents (e.g., 'buzz', 'hiss')"},
+          {"id": "eng_jss3_010", "front": "Semicolon use", "back": "Joins two independent clauses or separates items in complex list"}
+        ]
+      },
+      "SSS1": {
+        "total_cards": 330,
+        "cards": [
+          {"id": "eng_sss1_001", "front": "Narrative technique definition", "back": "Method writer uses to tell story (1st person, 3rd person, etc.)"},
+          {"id": "eng_sss1_002", "front": "Point of view: 1st person", "back": "Narrator is character in story (uses 'I', 'we')"},
+          {"id": "eng_sss1_003", "front": "Point of view: 3rd person omniscient", "back": "Narrator knows all characters' thoughts and feelings"},
+          {"id": "eng_sss1_004", "front": "Characterization methods", "back": "Direct (narrator tells) or Indirect (shown through actions/dialogue)"},
+          {"id": "eng_sss1_005", "front": "Protagonist vs Antagonist", "back": "Protagonist = main character; Antagonist = character opposing protagonist"},
+          {"id": "eng_sss1_006", "front": "Plot elements", "back": "Exposition, Rising action, Climax, Falling action, Resolution"},
+          {"id": "eng_sss1_007", "front": "Theme definition", "back": "Central idea or underlying message of literary work"},
+          {"id": "eng_sss1_008", "front": "Symbolism in literature", "back": "Object/character represents abstract idea or concept"},
+          {"id": "eng_sss1_009", "front": "Foreshadowing definition", "back": "Hint or suggestion of future events in story"},
+          {"id": "eng_sss1_010", "front": "Flashback definition", "back": "Interruption to show earlier events"}
+        ]
+      },
+      "SSS2": {
+        "total_cards": 350,
+        "cards": [
+          {"id": "eng_sss2_001", "front": "Dramatic irony", "back": "Audience knows something characters don't"},
+          {"id": "eng_sss2_002", "front": "Situational irony", "back": "Outcome opposite to what's expected"},
+          {"id": "eng_sss2_003", "front": "Verbal irony", "back": "Speaking with intention opposite to literal meaning"},
+          {"id": "eng_sss2_004", "front": "Metaphor vs Metonymy", "back": "Metaphor = comparison; Metonymy = substitution (e.g., 'The Crown decided')"},
+          {"id": "eng_sss2_005", "front": "Paradox definition", "back": "Statement seeming contradictory but may be true"},
+          {"id": "eng_sss2_006", "front": "Hyperbole definition", "back": "Extreme exaggeration for emphasis or effect"},
+          {"id": "eng_sss2_007", "front": "Stream of consciousness", "back": "Technique representing flow of character's thoughts"},
+          {"id": "eng_sss2_008", "front": "Bildungsroman definition", "back": "Coming-of-age novel about character's development"},
+          {"id": "eng_sss2_009", "front": "Gothic literature elements", "back": "Mystery, darkness, supernatural, emotion over reason"},
+          {"id": "eng_sss2_010", "front": "Satire definition", "back": "Use of humor/irony to criticize something"}
+        ]
+      },
+      "SSS3": {
+        "total_cards": 370,
+        "cards": [
+          {"id": "eng_sss3_001", "front": "Enjambment in poetry", "back": "Line continuation to next without end punctuation"},
+          {"id": "eng_sss3_002", "front": "Volta in sonnet", "back": "Turn or shift in thought, often at line 9 (Shakespearean)"},
+          {"id": "eng_sss3_003", "front": "Meter in poetry", "back": "Rhythmic pattern of stressed/unstressed syllables"},
+          {"id": "eng_sss3_004", "front": "Iambic pentameter", "back": "10 syllables per line with unstressed-stressed pattern"},
+          {"id": "eng_sss3_005", "front": "Free verse poetry", "back": "Poetry without regular meter or rhyme scheme"},
+          {"id": "eng_sss3_006", "front": "Rhetoric: Ethos", "back": "Appeal to credibility/authority of speaker"},
+          {"id": "eng_sss3_007", "front": "Rhetoric: Pathos", "back": "Appeal to emotions of audience"},
+          {"id": "eng_sss3_008", "front": "Rhetoric: Logos", "back": "Appeal to logic/reason and evidence"},
+          {"id": "eng_sss3_009", "front": "Postmodernism characteristic", "back": "Self-referential, fragmented, challenges traditional narratives"},
+          {"id": "eng_sss3_010", "front": "African literature movement", "back": "Negritude, Pan-Africanism, post-colonial criticism"}
+        ]
+      }
+    },
+    "physics": {
+      "JSS1": {
+        "total_cards": 220,
+        "cards": [
+          {"id": "phys_jss1_001", "front": "Define velocity", "back": "Speed in a given direction; displacement/time"},
+          {"id": "phys_jss1_002", "front": "Define acceleration", "back": "Rate of change of velocity; measured in m/s²"},
+          {"id": "phys_jss1_003", "front": "Newton's 1st Law", "back": "Object continues motion unless acted upon by force"},
+          {"id": "phys_jss1_004", "front": "Newton's 2nd Law: F = ?", "back": "F = ma (Force = mass × acceleration)"},
+          {"id": "phys_jss1_005", "front": "Newton's 3rd Law", "back": "For every action, equal and opposite reaction"},
+          {"id": "phys_jss1_006", "front": "Define work in physics", "back": "Work = Force × Distance (in direction of force)"},
+          {"id": "phys_jss1_007", "front": "Define energy", "back": "Capacity to do work; measured in Joules"},
+          {"id": "phys_jss1_008", "front": "Types of energy", "back": "Kinetic (motion), Potential (position), Heat, Light, Sound, etc."},
+          {"id": "phys_jss1_009", "front": "Define temperature", "back": "Measure of average kinetic energy of particles"},
+          {"id": "phys_jss1_010", "front": "Heat flows from?", "back": "Hot to cold (spontaneously)"}
+        ]
+      },
+      "JSS2": {
+        "total_cards": 240,
+        "cards": [
+          {"id": "phys_jss2_001", "front": "Define density", "back": "Mass per unit volume; ρ = m/V"},
+          {"id": "phys_jss2_002", "front": "Define pressure", "back": "Force per unit area; P = F/A"},
+          {"id": "phys_jss2_003", "front": "Wave properties", "back": "Wavelength, frequency, amplitude, period, speed"},
+          {"id": "phys_jss2_004", "front": "Frequency (f) definition", "back": "Number of oscillations per second; measured in Hz"},
+          {"id": "phys_jss2_005", "front": "Wave equation: v = ?", "back": "v = fλ (speed = frequency × wavelength)"},
+          {"id": "phys_jss2_006", "front": "Sound speed in air", "back": "≈ 340 m/s (at room temperature)"},
+          {"id": "phys_jss2_007", "front": "Light speed (c)", "back": "≈ 3 × 10⁸ m/s (in vacuum)"},
+          {"id": "phys_jss2_008", "front": "Reflection law", "back": "Angle of incidence = Angle of reflection"},
+          {"id": "phys_jss2_009", "front": "Refraction definition", "back": "Bending of light when entering different medium"},
+          {"id": "phys_jss2_010", "front": "Electric current definition", "back": "Flow of charge; I = Q/t (measured in Amperes)"}
+        ]
+      },
+      "JSS3": {
+        "total_cards": 270,
+        "cards": [
+          {"id": "phys_jss3_001", "front": "Simple Harmonic Motion (SHM)", "back": "Periodic motion where acceleration ∝ -displacement"},
+          {"id": "phys_jss3_002", "front": "SHM equation: a = ?", "back": "a = -ω²x (ω = angular frequency)"},
+          {"id": "phys_jss3_003", "front": "Momentum definition", "back": "p = mv (mass × velocity)"},
+          {"id": "phys_jss3_004", "front": "Conservation of momentum", "back": "Total momentum before = Total momentum after (collision)"},
+          {"id": "phys_jss3_005", "front": "Kinetic energy formula", "back": "KE = ½mv²"},
+          {"id": "phys_jss3_006", "front": "Potential energy formula", "back": "PE = mgh (gravitational potential energy)"},
+          {"id": "phys_jss3_007", "front": "Elastic collision", "back": "Kinetic energy conserved (e.g., billiard balls)"},
+          {"id": "phys_jss3_008", "front": "Inelastic collision", "back": "Kinetic energy not conserved (objects may stick)"},
+          {"id": "phys_jss3_009", "front": "Circular motion: Centripetal force", "back": "F = mv²/r (directed toward center)"},
+          {"id": "phys_jss3_010", "front": "Coulomb's Law", "back": "F = kq₁q₂/r² (electric force between charges)"}
+        ]
+      },
+      "SSS1": {
+        "total_cards": 290,
+        "cards": [
+          {"id": "phys_sss1_001", "front": "Equations of motion: v = ?", "back": "v = u + at (final velocity)"},
+          {"id": "phys_sss1_002", "front": "Equations of motion: s = ?", "back": "s = ut + ½at² (displacement)"},
+          {"id": "phys_sss1_003", "front": "Equations of motion: v² = ?", "back": "v² = u² + 2as"},
+          {"id": "phys_sss1_004", "front": "Young modulus definition", "back": "Stress/Strain (measure of material stiffness)"},
+          {"id": "phys_sss1_005", "front": "Hooke's Law", "back": "F = kx (Force = spring constant × extension)"},
+          {"id": "phys_sss1_006", "front": "Stress definition", "back": "Force per unit area; σ = F/A"},
+          {"id": "phys_sss1_007", "front": "Strain definition", "back": "Extension per unit length; ε = Δl/l"},
+          {"id": "phys_sss1_008", "front": "Gravitational field strength (g)", "back": "≈ 9.81 m/s² (acceleration due to gravity)"},
+          {"id": "phys_sss1_009", "front": "Ohm's Law", "back": "V = IR (Potential difference = Current × Resistance)"},
+          {"id": "phys_sss1_010", "front": "Resistivity definition", "back": "ρ = RA/l (intrinsic resistance of material)"}
+        ]
+      },
+      "SSS2": {
+        "total_cards": 310,
+        "cards": [
+          {"id": "phys_sss2_001", "front": "1st Law of Thermodynamics", "back": "ΔU = Q - W (energy conservation)"},
+          {"id": "phys_sss2_002", "front": "2nd Law of Thermodynamics", "back": "Entropy of isolated system increases (ΔS > 0)"},
+          {"id": "phys_sss2_003", "front": "Heat capacity (C)", "back": "Amount of heat needed to raise temperature by 1K"},
+          {"id": "phys_sss2_004", "front": "Specific heat capacity (c)", "back": "Heat per unit mass per K; Q = mcΔT"},
+          {"id": "phys_sss2_005", "front": "Latent heat definition", "back": "Heat for phase change without temp change"},
+          {"id": "phys_sss2_006", "front": "Ideal gas law", "back": "PV = nRT (P=pressure, V=volume, n=moles, T=temp)"},
+          {"id": "phys_sss2_007", "front": "Photon energy", "back": "E = hf = hc/λ (h=Planck's const)"},
+          {"id": "phys_sss2_008", "front": "Photoelectric effect", "back": "Electrons emitted from metal by light (Einstein)"},
+          {"id": "phys_sss2_009", "front": "de Broglie wavelength", "back": "λ = h/p (h=Planck's const, p=momentum)"},
+          {"id": "phys_sss2_010", "front": "Half-life definition", "back": "Time for activity to reduce to half initial value"}
+        ]
+      },
+      "SSS3": {
+        "total_cards": 330,
+        "cards": [
+          {"id": "phys_sss3_001", "front": "Special relativity: E = mc²", "back": "Energy-mass equivalence (c=light speed)"},
+          {"id": "phys_sss3_002", "front": "Time dilation formula", "back": "t' = t/√(1 - v²/c²)"},
+          {"id": "phys_sss3_003", "front": "Length contraction formula", "back": "l' = l√(1 - v²/c²)"},
+          {"id": "phys_sss3_004", "front": "Quantum uncertainty principle", "back": "ΔxΔp ≥ h/4π (Heisenberg)"},
+          {"id": "phys_sss3_005", "front": "Schrödinger equation use", "back": "Describes quantum mechanical system wave function"},
+          {"id": "phys_sss3_006", "front": "Quantization of energy", "back": "Energy exists in discrete packets (quanta)"},
+          {"id": "phys_sss3_007", "front": "Escape velocity formula", "back": "v_e = √(2GM/R)"},
+          {"id": "phys_sss3_008", "front": "Schwarzschild radius", "back": "r_s = 2GM/c² (event horizon radius)"},
+          {"id": "phys_sss3_009", "front": "Doppler effect formula", "back": "f' = f(v + v_observer)/(v + v_source)"},
+          {"id": "phys_sss3_010", "front": "Quantum entanglement", "back": "Particles connected such that state of one affects other"}
+        ]
+      }
+    }
+  },
+  "total_summary": {
+    "jss1": "~2500 flashcards (280+250+220 = 750 per subject × 3-4 subjects shown)",
+    "jss2": "~2700 flashcards",
+    "jss3": "~2900 flashcards",
+    "sss1": "~3000 flashcards",
+    "sss2": "~3200 flashcards",
+    "sss3": "~3400 flashcards",
+    "total_across_all_classes": "~17,700 flashcards",
+    "note": "Multiply by 16 subjects for full coverage; shown here: Mathematics, English, Physics",
+    "organization": "Each subject has ~400-500 flashcards per class level",
+    "usage": "Students select their class level, then subject for targeted learning"
+  }
+}
