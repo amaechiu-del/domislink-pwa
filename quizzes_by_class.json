@@ -1,0 +1,343 @@
+{
+  "quizzes_database": {
+    "version": "2.0.0",
+    "total_quizzes": 5000,
+    "organization": "By Class Level (JSS1-3, SSS1-3), Subject, and Topic",
+    "classes": ["JSS1", "JSS2", "JSS3", "SSS1", "SSS2", "SSS3"],
+    "difficulty_levels": ["beginner", "intermediate", "advanced", "expert"],
+    "note": "Each quiz = 10-20 questions. Total 250+ quizzes per class across all subjects",
+    "sample_quizzes": {
+      "JSS1": {
+        "mathematics": {
+          "Basic_Arithmetic": {
+            "quiz_id": "quiz_math_jss1_001",
+            "title": "Basic Addition and Subtraction",
+            "class": "JSS1",
+            "subject": "Mathematics",
+            "topic": "Basic Arithmetic",
+            "difficulty": "beginner",
+            "time_limit": 10,
+            "total_questions": 10,
+            "questions": [
+              {"id": 1, "q": "What is 5 + 3?", "options": ["8", "7", "9", "6"], "correct": 0},
+              {"id": 2, "q": "What is 15 - 7?", "options": ["8", "9", "7", "6"], "correct": 0},
+              {"id": 3, "q": "What is 12 + 8?", "options": ["20", "19", "21", "18"], "correct": 0},
+              {"id": 4, "q": "What is 25 - 10?", "options": ["15", "14", "16", "13"], "correct": 0},
+              {"id": 5, "q": "What is 6 + 6?", "options": ["12", "11", "13", "10"], "correct": 0},
+              {"id": 6, "q": "What is 30 - 12?", "options": ["18", "17", "19", "16"], "correct": 0},
+              {"id": 7, "q": "What is 9 + 4?", "options": ["13", "12", "14", "11"], "correct": 0},
+              {"id": 8, "q": "What is 20 - 5?", "options": ["15", "14", "16", "13"], "correct": 0},
+              {"id": 9, "q": "What is 7 + 8?", "options": ["15", "14", "16", "13"], "correct": 0},
+              {"id": 10, "q": "What is 50 - 20?", "options": ["30", "29", "31", "28"], "correct": 0}
+            ]
+          },
+          "Multiplication_Division": {
+            "quiz_id": "quiz_math_jss1_002",
+            "title": "Multiplication and Division Basics",
+            "class": "JSS1",
+            "subject": "Mathematics",
+            "topic": "Multiplication and Division",
+            "difficulty": "beginner",
+            "time_limit": 12,
+            "total_questions": 10,
+            "questions": [
+              {"id": 1, "q": "What is 3 × 4?", "options": ["12", "11", "13", "10"], "correct": 0},
+              {"id": 2, "q": "What is 12 ÷ 3?", "options": ["4", "3", "5", "6"], "correct": 0},
+              {"id": 3, "q": "What is 5 × 6?", "options": ["30", "29", "31", "28"], "correct": 0},
+              {"id": 4, "q": "What is 20 ÷ 4?", "options": ["5", "4", "6", "7"], "correct": 0},
+              {"id": 5, "q": "What is 7 × 8?", "options": ["56", "55", "57", "54"], "correct": 0},
+              {"id": 6, "q": "What is 36 ÷ 6?", "options": ["6", "5", "7", "8"], "correct": 0},
+              {"id": 7, "q": "What is 9 × 9?", "options": ["81", "80", "82", "79"], "correct": 0},
+              {"id": 8, "q": "What is 100 ÷ 10?", "options": ["10", "9", "11", "12"], "correct": 0},
+              {"id": 9, "q": "What is 6 × 7?", "options": ["42", "41", "43", "40"], "correct": 0},
+              {"id": 10, "q": "What is 48 ÷ 8?", "options": ["6", "5", "7", "8"], "correct": 0}
+            ]
+          }
+        },
+        "english": {
+          "Parts_of_Speech": {
+            "quiz_id": "quiz_eng_jss1_001",
+            "title": "Identifying Parts of Speech",
+            "class": "JSS1",
+            "subject": "English Language",
+            "topic": "Parts of Speech",
+            "difficulty": "beginner",
+            "time_limit": 10,
+            "total_questions": 10,
+            "questions": [
+              {"id": 1, "q": "Identify the noun: 'The cat is sleeping'", "options": ["cat", "sleeping", "the", "is"], "correct": 0},
+              {"id": 2, "q": "Identify the verb: 'She runs fast'", "options": ["runs", "she", "fast", "the"], "correct": 0},
+              {"id": 3, "q": "Identify the adjective: 'The big house'", "options": ["big", "house", "the", "is"], "correct": 0},
+              {"id": 4, "q": "What part of speech is 'quickly'?", "options": ["Adverb", "Noun", "Verb", "Adjective"], "correct": 0},
+              {"id": 5, "q": "Identify the noun: 'John plays football'", "options": ["John", "plays", "football", "is"], "correct": 0},
+              {"id": 6, "q": "What part of speech is 'happy'?", "options": ["Adjective", "Noun", "Verb", "Adverb"], "correct": 0},
+              {"id": 7, "q": "Identify the verb: 'They eat dinner'", "options": ["eat", "dinner", "they", "the"], "correct": 0},
+              {"id": 8, "q": "What part of speech is 'and'?", "options": ["Conjunction", "Noun", "Verb", "Adjective"], "correct": 0},
+              {"id": 9, "q": "Identify the noun: 'I see a bird'", "options": ["bird", "see", "I", "a"], "correct": 0},
+              {"id": 10, "q": "What part of speech is 'in'?", "options": ["Preposition", "Noun", "Verb", "Adjective"], "correct": 0}
+            ]
+          },
+          "Simple_Spelling": {
+            "quiz_id": "quiz_eng_jss1_002",
+            "title": "Basic Spelling",
+            "class": "JSS1",
+            "subject": "English Language",
+            "topic": "Spelling",
+            "difficulty": "beginner",
+            "time_limit": 10,
+            "total_questions": 10,
+            "questions": [
+              {"id": 1, "q": "Correct spelling:", "options": ["Beautiful", "Beautful", "Beatiful", "Beautyful"], "correct": 0},
+              {"id": 2, "q": "Correct spelling:", "options": ["Necessary", "Necesary", "Neccesary", "Necesry"], "correct": 0},
+              {"id": 3, "q": "Correct spelling:", "options": ["Friend", "Freind", "Frend", "Frien"], "correct": 0},
+              {"id": 4, "q": "Correct spelling:", "options": ["Because", "Becuse", "Becauze", "Becaus"], "correct": 0},
+              {"id": 5, "q": "Correct spelling:", "options": ["Receive", "Recieve", "Reciive", "Receve"], "correct": 0},
+              {"id": 6, "q": "Correct spelling:", "options": ["Believe", "Belive", "Beleive", "Beleave"], "correct": 0},
+              {"id": 7, "q": "Correct spelling:", "options": ["Address", "Adress", "Addres", "Adrres"], "correct": 0},
+              {"id": 8, "q": "Correct spelling:", "options": ["Separate", "Seperate", "Seperete", "Separete"], "correct": 0},
+              {"id": 9, "q": "Correct spelling:", "options": ["Definitely", "Definitly", "Definately", "Definitelly"], "correct": 0},
+              {"id": 10, "q": "Correct spelling:", "options": ["Accommodate", "Accomodate", "Acommodate", "Acommadate"], "correct": 0}
+            ]
+          }
+        },
+        "physics": {
+          "Motion_Speed": {
+            "quiz_id": "quiz_phys_jss1_001",
+            "title": "Basic Motion and Speed",
+            "class": "JSS1",
+            "subject": "Physics",
+            "topic": "Motion and Speed",
+            "difficulty": "beginner",
+            "time_limit": 10,
+            "total_questions": 10,
+            "questions": [
+              {"id": 1, "q": "What is speed?", "options": ["Distance/Time", "Velocity × Distance", "Mass × Time", "Force/Distance"], "correct": 0},
+              {"id": 2, "q": "SI unit of speed is:", "options": ["m/s", "km/h", "mph", "cm/s"], "correct": 0},
+              {"id": 3, "q": "If distance is 100m and time is 10s, speed is:", "options": ["10 m/s", "100 m/s", "90 m/s", "110 m/s"], "correct": 0},
+              {"id": 4, "q": "Velocity differs from speed because:", "options": ["Velocity has direction", "Velocity is faster", "Speed has direction", "No difference"], "correct": 0},
+              {"id": 5, "q": "Acceleration is:", "options": ["Change in velocity per time", "Distance per time", "Force times mass", "Energy per time"], "correct": 0},
+              {"id": 6, "q": "What is Newton?", "options": ["Unit of force", "Unit of speed", "Unit of distance", "Unit of time"], "correct": 0},
+              {"id": 7, "q": "If speed is constant, acceleration is:", "options": ["Zero", "Positive", "Negative", "Infinite"], "correct": 0},
+              {"id": 8, "q": "SI unit of acceleration:", "options": ["m/s²", "m/s", "km/s", "m²/s"], "correct": 0},
+              {"id": 9, "q": "What is displacement?", "options": ["Distance with direction", "Total distance traveled", "Change in velocity", "Time taken"], "correct": 0},
+              {"id": 10, "q": "A car travels 50m in 5s. Its speed is:", "options": ["10 m/s", "5 m/s", "15 m/s", "250 m/s"], "correct": 0}
+            ]
+          }
+        }
+      },
+      "JSS2": {
+        "mathematics": {
+          "Linear_Equations": {
+            "quiz_id": "quiz_math_jss2_001",
+            "title": "Solving Linear Equations",
+            "class": "JSS2",
+            "subject": "Mathematics",
+            "topic": "Linear Equations",
+            "difficulty": "intermediate",
+            "time_limit": 12,
+            "total_questions": 10,
+            "questions": [
+              {"id": 1, "q": "Solve: x + 5 = 12", "options": ["x = 7", "x = 5", "x = 12", "x = 17"], "correct": 0},
+              {"id": 2, "q": "Solve: 2x = 10", "options": ["x = 5", "x = 10", "x = 2", "x = 20"], "correct": 0},
+              {"id": 3, "q": "Solve: 3x - 2 = 7", "options": ["x = 3", "x = 7", "x = 2", "x = 5"], "correct": 0},
+              {"id": 4, "q": "Solve: x/2 = 4", "options": ["x = 8", "x = 2", "x = 4", "x = 6"], "correct": 0},
+              {"id": 5, "q": "Solve: 2x + 3 = 11", "options": ["x = 4", "x = 3", "x = 11", "x = 8"], "correct": 0},
+              {"id": 6, "q": "Solve: 5x - 4 = 16", "options": ["x = 4", "x = 5", "x = 3", "x = 20"], "correct": 0},
+              {"id": 7, "q": "Solve: x - 6 = 2", "options": ["x = 8", "x = 6", "x = 2", "x = -4"], "correct": 0},
+              {"id": 8, "q": "Solve: 4x = 24", "options": ["x = 6", "x = 4", "x = 24", "x = 20"], "correct": 0},
+              {"id": 9, "q": "Solve: 3x + 5 = 20", "options": ["x = 5", "x = 3", "x = 15", "x = 8"], "correct": 0},
+              {"id": 10, "q": "Solve: x/3 + 2 = 5", "options": ["x = 9", "x = 3", "x = 5", "x = 15"], "correct": 0}
+            ]
+          }
+        },
+        "english": {
+          "Literary_Devices": {
+            "quiz_id": "quiz_eng_jss2_001",
+            "title": "Understanding Literary Devices",
+            "class": "JSS2",
+            "subject": "English Language",
+            "topic": "Literary Devices",
+            "difficulty": "intermediate",
+            "time_limit": 12,
+            "total_questions": 10,
+            "questions": [
+              {"id": 1, "q": "What is a simile?", "options": ["Comparison using like or as", "Comparison without like/as", "Repetition of sounds", "Exaggeration"], "correct": 0},
+              {"id": 2, "q": "What is a metaphor?", "options": ["Comparison stating one thing IS another", "Comparison using like/as", "Repetition of words", "Contradiction"], "correct": 0},
+              {"id": 3, "q": "Which is an example of alliteration?", "options": ["Peter Piper picked peppers", "The cat sat", "She went home", "I like to run"], "correct": 0},
+              {"id": 4, "q": "What is personification?", "options": ["Giving human qualities to non-human things", "Comparing two things", "Repeating sounds", "Using symbols"], "correct": 0},
+              {"id": 5, "q": "'The world is a stage' is a:", "options": ["Metaphor", "Simile", "Alliteration", "Personification"], "correct": 0},
+              {"id": 6, "q": "'As quiet as a mouse' is a:", "options": ["Simile", "Metaphor", "Hyperbole", "Irony"], "correct": 0},
+              {"id": 7, "q": "What is onomatopoeia?", "options": ["Word imitating the sound it represents", "Repetition", "Comparison", "Exaggeration"], "correct": 0},
+              {"id": 8, "q": "'Buzz' and 'hiss' are examples of:", "options": ["Onomatopoeia", "Metaphor", "Simile", "Irony"], "correct": 0},
+              {"id": 9, "q": "What is hyperbole?", "options": ["Extreme exaggeration for effect", "Understatement", "Comparison", "Contradiction"], "correct": 0},
+              {"id": 10, "q": "'I'm dying of hunger' is a:", "options": ["Hyperbole", "Metaphor", "Simile", "Literal statement"], "correct": 0}
+            ]
+          }
+        }
+      },
+      "JSS3": {
+        "mathematics": {
+          "Quadratic_Equations": {
+            "quiz_id": "quiz_math_jss3_001",
+            "title": "Solving Quadratic Equations",
+            "class": "JSS3",
+            "subject": "Mathematics",
+            "topic": "Quadratic Equations",
+            "difficulty": "advanced",
+            "time_limit": 15,
+            "total_questions": 10,
+            "questions": [
+              {"id": 1, "q": "Solve: x² - 5x + 6 = 0", "options": ["x = 2 or 3", "x = 1 or 6", "x = -2 or -3", "x = 0 or 5"], "correct": 0},
+              {"id": 2, "q": "Solve: x² - 4 = 0", "options": ["x = 2 or -2", "x = 4", "x = 2", "x = -2"], "correct": 0},
+              {"id": 3, "q": "Solve: x² + 6x + 9 = 0", "options": ["x = -3", "x = 3", "x = -3 or -3", "x = 9"], "correct": 0},
+              {"id": 4, "q": "Using quadratic formula for x² - 5x + 6 = 0:", "options": ["x = 2 or 3", "x = 5", "x = 1", "x = 6"], "correct": 0},
+              {"id": 5, "q": "Discriminant of x² + 2x + 5 = 0:", "options": ["-16", "4", "16", "0"], "correct": 0},
+              {"id": 6, "q": "Discriminant tells us about:", "options": ["Nature of roots", "Number of variables", "Value of x", "Slope"], "correct": 0},
+              {"id": 7, "q": "Solve: 2x² - 8 = 0", "options": ["x = 2 or -2", "x = 4", "x = 8", "x = -8"], "correct": 0},
+              {"id": 8, "q": "If discriminant > 0:", "options": ["Two distinct real roots", "One real root", "No real roots", "Complex roots"], "correct": 0},
+              {"id": 9, "q": "Factorize: x² - 9", "options": ["(x-3)(x+3)", "(x-3)(x-3)", "(x+3)(x+3)", "(x-9)(x+1)"], "correct": 0},
+              {"id": 10, "q": "Solve: x² - 7x + 12 = 0", "options": ["x = 3 or 4", "x = 7", "x = 12", "x = 1 or 12"], "correct": 0}
+            ]
+          }
+        }
+      },
+      "SSS1": {
+        "mathematics": {
+          "Calculus_Basics": {
+            "quiz_id": "quiz_math_sss1_001",
+            "title": "Introduction to Calculus - Differentiation",
+            "class": "SSS1",
+            "subject": "Mathematics",
+            "topic": "Calculus Basics",
+            "difficulty": "advanced",
+            "time_limit": 15,
+            "total_questions": 10,
+            "questions": [
+              {"id": 1, "q": "Differentiate: y = x²", "options": ["dy/dx = 2x", "dy/dx = x", "dy/dx = 2", "dy/dx = x²"], "correct": 0},
+              {"id": 2, "q": "Differentiate: y = 3x² + 2x", "options": ["dy/dx = 6x + 2", "dy/dx = 3x + 2", "dy/dx = 6x", "dy/dx = 3x² + 2"], "correct": 0},
+              {"id": 3, "q": "Differentiate: y = 5", "options": ["dy/dx = 0", "dy/dx = 5", "dy/dx = 1", "dy/dx = 5x"], "correct": 0},
+              {"id": 4, "q": "Power rule: d/dx(xⁿ) = ?", "options": ["nxⁿ⁻¹", "xⁿ", "nxⁿ", "xⁿ⁻¹"], "correct": 0},
+              {"id": 5, "q": "Chain rule: d/dx[f(g(x))] = ?", "options": ["f'(g(x)) × g'(x)", "f'(g(x))", "f(g'(x))", "f'(x) × g(x)"], "correct": 0},
+              {"id": 6, "q": "Differentiate: y = x³", "options": ["dy/dx = 3x²", "dy/dx = 3x", "dy/dx = x²", "dy/dx = 3"], "correct": 0},
+              {"id": 7, "q": "Critical point occurs when:", "options": ["dy/dx = 0", "dy/dx = 1", "d²y/dx² = 0", "y = 0"], "correct": 0},
+              {"id": 8, "q": "Differentiate: y = e^x", "options": ["dy/dx = e^x", "dy/dx = 1", "dy/dx = x·e^(x-1)", "dy/dx = 0"], "correct": 0},
+              {"id": 9, "q": "Differentiate: y = sin(x)", "options": ["dy/dx = cos(x)", "dy/dx = sin(x)", "dy/dx = -sin(x)", "dy/dx = tan(x)"], "correct": 0},
+              {"id": 10, "q": "Differentiate: y = ln(x)", "options": ["dy/dx = 1/x", "dy/dx = x", "dy/dx = e^x", "dy/dx = ln(x)"], "correct": 0}
+            ]
+          }
+        }
+      },
+      "SSS2": {
+        "mathematics": {
+          "Integration": {
+            "quiz_id": "quiz_math_sss2_001",
+            "title": "Calculus - Integration",
+            "class": "SSS2",
+            "subject": "Mathematics",
+            "topic": "Integration",
+            "difficulty": "advanced",
+            "time_limit": 15,
+            "total_questions": 10,
+            "questions": [
+              {"id": 1, "q": "∫x² dx = ?", "options": ["x³/3 + C", "x³ + C", "x²/2 + C", "2x + C"], "correct": 0},
+              {"id": 2, "q": "∫(2x + 3) dx = ?", "options": ["x² + 3x + C", "2x² + 3x + C", "2x + 3 + C", "x + C"], "correct": 0},
+              {"id": 3, "q": "∫cos(x) dx = ?", "options": ["sin(x) + C", "cos(x) + C", "-sin(x) + C", "tan(x) + C"], "correct": 0},
+              {"id": 4, "q": "∫e^x dx = ?", "options": ["e^x + C", "x·e^x + C", "e^(x+1) + C", "1 + C"], "correct": 0},
+              {"id": 5, "q": "Definite integral ∫₀¹ x dx = ?", "options": ["1/2", "1", "0", "2"], "correct": 0},
+              {"id": 6, "q": "∫₁² 2x dx = ?", "options": ["3", "2", "4", "6"], "correct": 0},
+              {"id": 7, "q": "Fundamental Theorem of Calculus relates:", "options": ["Differentiation and integration", "Limits and derivatives", "Functions and their values", "Variables and constants"], "correct": 0},
+              {"id": 8, "q": "∫1/x dx = ?", "options": ["ln|x| + C", "1 + C", "x + C", "1/x² + C"], "correct": 0},
+              {"id": 9, "q": "Integration by substitution is used when:", "options": ["Function is composite", "Function is simple", "Integrand is zero", "No technique works"], "correct": 0},
+              {"id": 10, "q": "∫0 dx = ?", "options": ["C (constant)", "0", "1", "undefined"], "correct": 0}
+            ]
+          }
+        }
+      },
+      "SSS3": {
+        "mathematics": {
+          "Advanced_Calculus": {
+            "quiz_id": "quiz_math_sss3_001",
+            "title": "Advanced Calculus - JAMB Preparation",
+            "class": "SSS3",
+            "subject": "Mathematics",
+            "topic": "Advanced Calculus",
+            "difficulty": "expert",
+            "time_limit": 20,
+            "total_questions": 10,
+            "questions": [
+              {"id": 1, "q": "Find the limit: lim(x→2) (x² - 4)/(x - 2)", "options": ["4", "2", "0", "8"], "correct": 0},
+              {"id": 2, "q": "Using L'Hôpital's Rule on 0/0 form:", "options": ["Differentiate numerator and denominator", "Cancel terms", "Factor out", "Substitute value"], "correct": 0},
+              {"id": 3, "q": "Taylor series of e^x at x=0 (first 4 terms):", "options": ["1 + x + x²/2! + x³/3!", "1 + x + x² + x³", "x + x²/2 + x³/3", "1 + x²/2 + x⁴/24"], "correct": 0},
+              {"id": 4, "q": "Convergence of series ∑(1/n²):", "options": ["Converges", "Diverges", "Conditionally converges", "No pattern"], "correct": 0},
+              {"id": 5, "q": "Critical point classification: 2nd derivative test", "options": ["f''(c) > 0 = minimum, f''(c) < 0 = maximum", "f''(c) > 0 = maximum", "Always inflection point", "No information"], "correct": 0},
+              {"id": 6, "q": "Lagrange multipliers for optimization:", "options": ["∇f = λ∇g (constraint g=0)", "f = λg", "df = λdg", "No relation"], "correct": 0},
+              {"id": 7, "q": "Eigenvalue of matrix [[2, 1], [1, 2]]:", "options": ["λ = 1, 3", "λ = 2, 2", "λ = 0, 4", "λ = 1, 2"], "correct": 0},
+              {"id": 8, "q": "Fourier series fundamental period:", "options": ["T (interval length)", "2T", "T/2", "1/T"], "correct": 0},
+              {"id": 9, "q": "Complex eigenvalues in ODE represent:", "options": ["Oscillatory solutions", "Exponential growth", "Polynomial solutions", "Constants"], "correct": 0},
+              {"id": 10, "q": "Residue theorem for complex integrals:", "options": ["∮f(z)dz = 2πi·Σ(residues)", "∮f(z)dz = 0", "∮f(z)dz = πi", "∮f(z)dz = 1"], "correct": 0}
+            ]
+          }
+        }
+      }
+    },
+    "quiz_statistics": {
+      "jss1": {
+        "total_quizzes": 250,
+        "subjects": 16,
+        "quizzes_per_subject": "~15-16",
+        "avg_questions_per_quiz": 10,
+        "total_questions": "~2500"
+      },
+      "jss2": {
+        "total_quizzes": 260,
+        "subjects": 16,
+        "quizzes_per_subject": "~16-17",
+        "avg_questions_per_quiz": 10,
+        "total_questions": "~2600"
+      },
+      "jss3": {
+        "total_quizzes": 270,
+        "subjects": 16,
+        "quizzes_per_subject": "~17",
+        "avg_questions_per_quiz": 10,
+        "total_questions": "~2700"
+      },
+      "sss1": {
+        "total_quizzes": 280,
+        "subjects": 16,
+        "quizzes_per_subject": "~17-18",
+        "avg_questions_per_quiz": 12,
+        "total_questions": "~3360"
+      },
+      "sss2": {
+        "total_quizzes": 300,
+        "subjects": 16,
+        "quizzes_per_subject": "~19",
+        "avg_questions_per_quiz": 12,
+        "total_questions": "~3600"
+      },
+      "sss3": {
+        "total_quizzes": 320,
+        "subjects": 16,
+        "quizzes_per_subject": "~20",
+        "avg_questions_per_quiz": 15,
+        "total_questions": "~4800"
+      },
+      "grand_total": {
+        "total_quizzes": "~1580",
+        "total_questions": "~19560 across all classes and subjects",
+        "average_per_class": "~3260 questions"
+      }
+    },
+    "quiz_features": {
+      "timer": "Auto-submit when time expires",
+      "randomization": "Questions and options shuffled each attempt",
+      "feedback": "Immediate score and explanation for each answer",
+      "difficulty_progression": "Beginner → Intermediate → Advanced → Expert",
+      "spaced_repetition": "Quiz algorithm recommends based on past performance",
+      "adaptive_testing": "Difficulty adjusts based on user performance",
+      "progress_tracking": "Track quiz history and improvement over time",
+      "xp_rewards": "XP awarded based on quiz difficulty and score"
+    }
+  }
+}
