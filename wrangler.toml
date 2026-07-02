@@ -1,0 +1,29 @@
+name = "teachmaster"
+main = "src/index.js"
+compatibility_date = "2024-01-01"
+
+[build]
+command = "npm run build"
+cwd = "./"
+watch_paths = ["src/**/*.js"]
+
+[env.production]
+routes = [
+  { pattern = "teachmaster.pages.dev", zone_name = "domislink.com" }
+]
+
+[[analytics.engine.datasets]]
+dataset = "web_analytics"
+
+# Cache rules for PWA
+[caches.default]
+default_ttl = 3600
+cache_on_cookie = "session_id"
+
+[[routes]]
+pattern = "*/sw.js"
+cache = { default_ttl = 0 }
+
+[[routes]]
+pattern = "*"
+cache = { default_ttl = 3600 }
