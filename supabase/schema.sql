@@ -40,6 +40,20 @@ create index if not exists subscriptions_reference_idx on public.subscriptions(p
 alter table public.profiles enable row level security;
 alter table public.subscriptions enable row level security;
 
+-- SECURITY DEFINER helper avoids recursive RLS checks when preserving a role.
+create or replace function public.current_user_role()
+returns public.app_role
+language sql
+security definer
+set search_path = public
+stable
+as $$
+  select role from public.profiles where id = auth.uid();
+$$;
+
+revoke all on function public.current_user_role() from public;
+grant execute on function public.current_user_role() to authenticated;
+
 drop policy if exists profiles_select_own on public.profiles;
 create policy profiles_select_own
 on public.profiles for select
@@ -47,16 +61,12 @@ to authenticated
 using (id = auth.uid());
 
 -- A user may edit profile details but cannot change their role.
--- The role in the submitted row must equal the current stored role.
 drop policy if exists profiles_update_own on public.profiles;
 create policy profiles_update_own
 on public.profiles for update
 to authenticated
 using (id = auth.uid())
-with check (
-  id = auth.uid()
-  and role = (select p.role from public.profiles p where p.id = auth.uid())
-);
+with check (id = auth.uid() and role = public.current_user_role());
 
 drop policy if exists subscriptions_select_own on public.subscriptions;
 create policy subscriptions_select_own
@@ -64,7 +74,7 @@ on public.subscriptions for select
 to authenticated
 using (user_id = auth.uid());
 
--- There are intentionally no client INSERT/UPDATE/DELETE policies for subscriptions.
+-- No client INSERT/UPDATE/DELETE policies for subscriptions.
 -- A trusted server/webhook creates entitlements after Paystack verification.
 
 create or replace function public.handle_new_user()
@@ -90,8 +100,7 @@ after insert on auth.users
 for each row execute procedure public.handle_new_user();
 
 -- Bootstrap the named administrator after the account has been created.
--- This does NOT create an account or a password. The email must still be
--- verified/authenticated through Supabase Auth.
+-- This does NOT create an account or a password.
 update public.profiles
 set role = 'admin', updated_at = now()
 where lower(email) = lower('domislinkint@gmail.com');
