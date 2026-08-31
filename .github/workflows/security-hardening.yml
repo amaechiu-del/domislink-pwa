@@ -1,0 +1,61 @@
+name: Security hardening
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  harden:
+    if: ${{ !contains(github.event.head_commit.message, '[security-patch]') }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Patch prototype authentication safely
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          app = Path('app.js')
+          text = app.read_text(encoding='utf-8')
+          text = text.replace("adminEmail: 'admin@domislink.com'", "adminEmail: 'domislinkint@gmail.com'")
+          text = text.replace("let currentUser = DB.get('currentUser') || null;", "let currentUser = null; // identity comes from Supabase Auth")
+          app.write_text(text, encoding='utf-8')
+
+          index = Path('index.html')
+          html = index.read_text(encoding='utf-8')
+          scripts = '''\n<script src="runtime-config.js"></script>\n<script src="auth.js"></script>\n'''
+          if 'src="auth.js"' not in html:
+              marker = '</body>'
+              if marker in html:
+                  html = html.replace(marker, scripts + marker, 1)
+              else:
+                  html += scripts
+          index.write_text(html, encoding='utf-8')
+          PY
+
+      - name: Validate patched files
+        run: |
+          grep -q "domislinkint@gmail.com" app.js
+          grep -q 'src="auth.js"' index.html
+          test -f runtime-config.js
+          test -f auth.js
+          node --check app.js
+          node --check auth.js
+
+      - name: Commit hardening changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add app.js index.html
+          if git diff --cached --quiet; then
+            echo "No hardening changes required."
+            exit 0
+          fi
+          git commit -m "security: harden authentication integration [security-patch]"
+          git push
