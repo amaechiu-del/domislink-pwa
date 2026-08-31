@@ -17,6 +17,12 @@
 /runtime-config.js
   Cache-Control: no-store, no-cache, must-revalidate
 
+/auth.js
+  Cache-Control: no-store, no-cache, must-revalidate
+
+/app.js
+  Cache-Control: no-store, no-cache, must-revalidate
+
 /*.js
   Cache-Control: max-age=31536000, immutable
 
