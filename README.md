@@ -1,209 +1,81 @@
 # 📚 TeachMaster - WAEC, NECO, JAMB Prep Platform
 
-## 🎯 WHAT THIS APP DOES (ACTUALLY WORKS!)
+## 🎯 WHAT THIS APP DOES
 
-✅ **User Registration/Login** - Real accounts, saved progress
-✅ **16 Subjects** - Math, English, Physics, Chemistry, Biology, Economics, History, Geography, French, ICT, Government, Literature, Accounting, Commerce, Agriculture, CRS & IRS
-✅ **Working Quizzes** - Real questions, scoring, XP rewards
-✅ **Flashcards** - Study cards with spaced repetition
-✅ **Gamification** - XP, streaks, badges, leaderboard
-✅ **Subscription System** - Free tier + paid plans
-✅ **Admin Panel** - Add questions, view stats, export data
-✅ **Offline Mode** - Works without internet (PWA)
-✅ **Mobile Ready** - Responsive design
+✅ User registration/login
+✅ 16 exam-preparation subjects
+✅ Quizzes, scoring, XP, streaks and badges
+✅ Flashcards
+✅ Subscription plans
+✅ Admin panel
+✅ PWA/offline support
 
----
+## 🔐 AUTHENTICATION & SECURITY
 
-## 🚀 DEPLOY TO CLOUDFLARE PAGES (5 MINUTES) ⭐ RECOMMENDED
+**Administrator email:** `domislinkint@gmail.com`
 
-### Step 1: Create Cloudflare Account
-1. Go to: https://dash.cloudflare.com/sign-up
-2. Sign up (free - no credit card needed)
-3. Verify email
+Authentication is being migrated from the original browser-only prototype to a production architecture based on Supabase Auth, JWT sessions, server-side authorization and database Row Level Security (RLS).
 
-### Step 2: Connect GitHub
-1. Click **"Pages"** in left sidebar
-2. Click **"Create a project"**
-3. Select **"Connect to Git"**
-4. Authorize GitHub & select `amaechiu-del/domislink-pwa`
-5. Click **Connect**
+**Never commit:** passwords, Supabase service-role keys, Paystack secret keys, private API keys, or other server secrets.
 
-### Step 3: Configure Build
-- **Project name:** `teachmaster`
-- **Production branch:** `main`
-- **Build command:** (leave empty - static site)
-- **Output directory:** `/`
+### Production request flow
 
-### Step 4: Deploy!
-1. Click **"Save and Deploy"**
-2. Wait 30-60 seconds
-3. **Your URL:** `https://teachmaster.pages.dev`
-
-### 🎁 Auto-Deploy on Push
-Every time you push to GitHub → Cloudflare auto-deploys (no manual steps!)
-
----
-
-## 📁 FILES IN THIS FOLDER
-
-```
-teachmaster/
-├── index.html           ← Main app (UI)
-├── app.js               ← All functionality (the ENGINE)
-├── sw.js                ← Offline support
-├── manifest.json        ← PWA config
-├── curriculum.json      ← 16 subjects with topics & lessons
-├── wrangler.toml        ← Cloudflare config
-├── _redirects           ← SPA routing
-├── _headers             ← Security headers
-├── CLOUDFLARE_DEPLOY.md ← Full deployment guide
-└── README.md            ← This file
+```text
+Browser / PWA
+      ↓ HTTPS
+Supabase Auth
+      ↓ access token / refresh session
+Protected API or Supabase database
+      ↓ JWT verification + RLS / role checks
+Application data
 ```
 
----
+`localStorage` is permitted only for non-sensitive offline application data. A cached `currentUser`, role, subscription, or admin flag must never be treated as proof of identity or authorization.
 
-## 📚 CURRICULUM - 16 SUBJECTS ALIGNED TO EXAM SYLLABI
-
-### **Exam Boards Covered**
-- ✅ WAEC (West African Examinations Council)
-- ✅ NECO (National Examinations Council)
-- ✅ JAMB (Joint Admissions and Matriculation Board)
-- ✅ BECE (Basic Education Certificate Examination)
-
-### **Subjects Available**
-
-| # | Subject | Exam Boards | Status |
-|---|---------|-----------|--------|
-| 1 | 🔢 Mathematics | WAEC, NECO, JAMB, BECE | ✅ Free |
-| 2 | 📝 English Language | WAEC, NECO, JAMB, BECE | ✅ Free |
-| 3 | ⚡ Physics | WAEC, NECO, JAMB | 🔒 Premium |
-| 4 | 🧪 Chemistry | WAEC, NECO, JAMB | 🔒 Premium |
-| 5 | 🧬 Biology | WAEC, NECO, JAMB | 🔒 Premium |
-| 6 | 📊 Economics | WAEC, NECO, JAMB | 🔒 Premium |
-| 7 | 🏛️ Government/Civics | WAEC, NECO, JAMB | 🔒 Premium |
-| 8 | 📚 Literature in English | WAEC, NECO, JAMB | 🔒 Premium |
-| 9 | 💰 Accounting | WAEC, NECO | 🔒 Premium |
-| 10 | 🛒 Commerce | WAEC, NECO | 🔒 Premium |
-| 11 | 🌾 Agricultural Science | WAEC, NECO, JAMB | 🔒 Premium |
-| 12 | ✝️ Christian Religious Studies | WAEC, NECO, JAMB | 🔒 Premium |
-| 13 | ☪️ Islamic Religious Studies | WAEC, NECO, JAMB | 🔒 Premium |
-| 14 | 📜 History | WAEC, NECO, JAMB | 🔒 Premium |
-| 15 | 🗺️ Geography | WAEC, NECO, JAMB | 🔒 Premium |
-| 16 | 🇫🇷 French Language | WAEC, NECO, JAMB | 🔒 Premium |
-
----
+See `AUTHENTICATION.md`, `SECURITY.md`, and `supabase/schema.sql` for the security design and database policy.
 
 ## 💰 SUBSCRIPTION MODEL
 
 | Plan | Price | Duration |
 |------|-------|----------|
-| Free | ₦0 | Forever (2 subjects only: Math & English) |
+| Free | ₦0 | Forever |
 | Monthly | ₦2,000 | 30 days |
-| Termly | ₦5,000 | 90 days (Save 17%) |
-| Yearly | ₦15,000 | 365 days (Save 37%) |
+| Termly | ₦5,000 | 90 days |
+| Yearly | ₦15,000 | 365 days |
 | School Bulk | Contact | Custom |
 
----
+## 📁 MAIN FILES
 
-## 🔐 ADMIN ACCESS
+```text
+app.js                    ← application engine
+curriculum.json           ← curriculum
+questions_by_class.json   ← question bank
+flashcards_by_class.json  ← flashcards
+manifest.json             ← PWA configuration
+_headers                  ← security headers
+_redirects                ← routing
+AUTHENTICATION.md         ← authentication design
+SECURITY.md               ← security rules/checklist
+supabase/schema.sql       ← database/RLS foundation
+functions/api/paystack/   ← server-side payment webhook
+```
 
-**Email:** admin@domislink.com
-**Password:** (set when you first sign up with this email)
+## 🚀 DEPLOYMENT
 
-Admin can:
-- View total users
-- View subscribers  
-- View quizzes taken
-- Add new questions
-- Export all data
-- Monitor revenue
+The project can be deployed to Cloudflare Pages. Configure public Supabase values through deployment configuration; never expose server secrets in frontend JavaScript.
 
----
+For Paystack, the browser may use only the public key. Payment verification and webhook processing must use the secret key on the server.
 
-## 📱 INSTALL AS APP
+## 🔒 SECURITY RULES
 
-### On Phone:
-1. Open the website in Chrome
-2. Tap menu (3 dots)
-3. Tap "Add to Home Screen"
-4. Done! App icon on your phone
+1. Passwords are handled by Supabase Auth, not browser storage.
+2. Never store plaintext passwords.
+3. Never trust a client-side admin flag.
+4. Protected database operations must be controlled by Supabase RLS and/or a verified backend.
+5. Subscription status must be server/database authoritative.
+6. Paystack transactions must be verified server-side.
+7. Offline caches must not bypass subscription or admin controls.
+8. Rotate any secret that was previously committed to a public repository.
 
----
-
-## 🌐 ALTERNATIVE: Deploy to Netlify
-
-### Step 1: Go to Netlify
-Open: https://app.netlify.com/
-
-### Step 2: Drag & Drop
-1. Login with your Google account
-2. Click "Sites" in sidebar
-3. Drag this entire folder to the upload area
-4. Wait 30 seconds
-
-### Step 3: Done!
-You'll get a URL like: `random-name-123.netlify.app`
-
----
-
-## ✅ WHAT'S DIFFERENT FROM YOUR OLD FILES
-
-| Old (DeepSeek) | New (This) |
-|----------------|------------|
-| Pretty buttons | Buttons WORK |
-| No login | Real login system |
-| No database | LocalStorage + Supabase ready |
-| 12 subjects | **16 subjects** + full curriculum |
-| No quizzes | 50+ working questions |
-| No flashcards | Working flashcard system |
-| No XP | Full gamification |
-| No admin | Admin panel included |
-| No offline | PWA offline mode |
-| Deploy to Netlify only | **Deploy to Cloudflare + Netlify** |
-
----
-
-## 🔧 Why Cloudflare Pages?
-
-✅ **Faster** - 2-3x faster than Netlify  
-✅ **Global CDN** - Free worldwide edge servers  
-✅ **Better Security** - Built-in DDoS protection  
-✅ **Auto-Deploy** - Every GitHub push = instant deploy  
-✅ **Free SSL** - HTTPS automatically  
-✅ **Analytics** - Track users & performance  
-✅ **Preview Deploys** - Test PRs before merging  
-
----
-
-## 📖 Full Deployment Guide
-
-See **`CLOUDFLARE_DEPLOY.md`** for:
-- Detailed troubleshooting
-- Custom domain setup
-- Preview deployments
-- Monitoring your site
-- Pro tips
-
----
-
-## 📚 Curriculum Structure
-
-Each subject includes:
-- **5+ Topic Areas** covering exam syllabi
-- **Multiple Sub-topics** for each topic
-- **Lesson Plans** aligned to WAEC/NECO/JAMB standards
-- **Practice Questions** for each topic
-- **Flashcards** for quick revision
-
-Example: **Mathematics**
-- Number Systems & Operations
-- Algebra
-- Geometry & Trigonometry
-- Calculus Basics
-- Statistics & Probability
-
----
-
-**Built for Nigerian Students**
+**Built for Nigerian Students**  
 **DomisLink International Business Services Ltd**
-**© 2024-2025**
