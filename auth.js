@@ -1,11 +1,10 @@
 // Production authentication bridge for the existing TeachMaster UI.
-// This file is loaded after app.js so it can replace the prototype's
-// localStorage login handlers without removing the existing UI.
+// Loaded after the legacy application core. It replaces browser-only
+// authentication decisions with Supabase Auth + database authorization.
 
 (() => {
     const SUPABASE_URL = window.DOMISLINK_SUPABASE_URL || '';
     const SUPABASE_ANON_KEY = window.DOMISLINK_SUPABASE_ANON_KEY || '';
-    const ADMIN_EMAIL = 'domislinkint@gmail.com';
 
     let client = null;
     let subscriptionActive = false;
@@ -33,12 +32,10 @@
             .select('id,email,full_name,role')
             .eq('id', user.id)
             .maybeSingle();
-
         if (error) {
             console.error('Profile lookup failed:', error);
             return null;
         }
-
         profileRole = data?.role || 'user';
         return data;
     }
@@ -48,7 +45,6 @@
             subscriptionActive = false;
             return;
         }
-
         const { data, error } = await client
             .from('subscriptions')
             .select('status,expires_at')
@@ -58,9 +54,46 @@
             .order('expires_at', { ascending: false })
             .limit(1)
             .maybeSingle();
-
         if (error) console.error('Subscription lookup failed:', error);
         subscriptionActive = Boolean(data && !error);
+    }
+
+    function updateAuthenticatedUI() {
+        const firstName = currentUser?.name?.split(' ')[0] || 'Login';
+        const setText = (id, value) => {
+            const el = document.getElementById(id);
+            if (el) el.textContent = value;
+        };
+        const setDisplay = (id, value) => {
+            const el = document.getElementById(id);
+            if (el) el.style.display = value;
+        };
+
+        setText('userXP', `${userStats.xp} XP`);
+        setText('userStreak', `🔥 ${userStats.streak} Days`);
+        setText('totalXP', userStats.xp);
+        setText('quizzesTaken', userStats.quizzesTaken);
+        setText('streak', userStats.streak);
+        setText('profileXP', userStats.xp);
+        setText('profileQuizzes', userStats.quizzesTaken);
+        setText('profileStreak', userStats.streak);
+        setText('profileBadges', userStats.badges.length);
+
+        if (currentUser) {
+            setText('profileName', currentUser.name);
+            setText('profileEmail', currentUser.email);
+            setText('loginBtn', firstName);
+            setDisplay('profileLoginBtn', 'none');
+            setDisplay('logoutBtn', 'block');
+            setDisplay('adminTab', window.isAdministrator() ? 'inline-block' : 'none');
+        } else {
+            setText('loginBtn', 'Login');
+            setText('profileName', 'Guest User');
+            setText('profileEmail', 'Login to save your progress');
+            setDisplay('profileLoginBtn', 'block');
+            setDisplay('logoutBtn', 'none');
+            setDisplay('adminTab', 'none');
+        }
     }
 
     async function applySession(session) {
@@ -68,13 +101,12 @@
             currentUser = null;
             profileRole = 'user';
             subscriptionActive = false;
-            updateUI();
+            updateAuthenticatedUI();
             return;
         }
 
         const user = session.user;
         const profile = await loadProfile(user);
-
         currentUser = {
             id: user.id,
             email: user.email,
@@ -83,11 +115,9 @@
         };
 
         await loadSubscription(user);
-
         const savedStats = DB.get(`stats_${user.id}`);
         if (savedStats) userStats = savedStats;
-
-        updateUI();
+        updateAuthenticatedUI();
     }
 
     window.handleAuth = async function handleAuth() {
@@ -100,18 +130,9 @@
         const password = document.getElementById('authPassword').value;
         const name = document.getElementById('authName').value.trim();
 
-        if (!email || !password) {
-            showToast('Please fill all fields!');
-            return;
-        }
-        if (isSignUp && !name) {
-            showToast('Please enter your name!');
-            return;
-        }
-        if (password.length < 8) {
-            showToast('Password must be at least 8 characters.');
-            return;
-        }
+        if (!email || !password) return showToast('Please fill all fields!');
+        if (isSignUp && !name) return showToast('Please enter your name!');
+        if (password.length < 8) return showToast('Password must be at least 8 characters.');
 
         if (isSignUp) {
             const { data, error } = await client.auth.signUp({
@@ -122,40 +143,31 @@
                     emailRedirectTo: window.location.origin + window.location.pathname
                 }
             });
-
-            if (error) {
-                showToast(error.message);
-                return;
-            }
-
+            if (error) return showToast(error.message);
             closeModal('authModal');
             showToast(data.session ? 'Account created! 🎉' : 'Account created. Check your email to confirm your account.');
             return;
         }
 
         const { error } = await client.auth.signInWithPassword({ email, password });
-        if (error) {
-            showToast('Login failed. Check your email and password.');
-            return;
-        }
-
+        if (error) return showToast('Login failed. Check your email and password.');
         closeModal('authModal');
         showToast('Welcome back! 👋');
     };
 
     window.onLogin = async function onLogin() {
-        // Login is now controlled by Supabase auth-state events.
-        const { data } = await client?.auth.getSession();
+        if (!client) return;
+        const { data } = await client.auth.getSession();
         await applySession(data?.session || null);
     };
 
     window.logout = async function logout() {
-        if (currentUser?.id) DB.remove(`stats_${currentUser.id}`);
         if (client) await client.auth.signOut();
         currentUser = null;
         profileRole = 'user';
         subscriptionActive = false;
-        updateUI();
+        DB.remove('currentUser');
+        updateAuthenticatedUI();
         showToast('Logged out successfully');
     };
 
@@ -195,29 +207,15 @@
         }
 
         const { data: { session } } = await client.auth.getSession();
-        if (!session?.access_token) {
-            showToast('Your login session has expired. Please login again.');
-            return;
-        }
+        if (!session?.access_token) return showToast('Your login session has expired. Please login again.');
 
         const response = await fetch('/api/paystack/initialize', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                Authorization: `Bearer ${session.access_token}`
-            },
-            body: JSON.stringify({
-                plan,
-                callback_url: window.location.origin + window.location.pathname
-            })
+            headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${session.access_token}` },
+            body: JSON.stringify({ plan, callback_url: window.location.origin + window.location.pathname })
         });
-
         const result = await response.json().catch(() => ({}));
-        if (!response.ok || !result.authorization_url) {
-            showToast(result.error || 'Unable to start payment.');
-            return;
-        }
-
+        if (!response.ok || !result.authorization_url) return showToast(result.error || 'Unable to start payment.');
         window.location.href = result.authorization_url;
     };
 
@@ -229,34 +227,33 @@
             .select('*', { count: 'exact', head: true })
             .eq('status', 'active')
             .gt('expires_at', new Date().toISOString());
-
         const usersEl = document.getElementById('adminUsers');
         const subscribersEl = document.getElementById('adminSubscribers');
         if (usersEl) usersEl.textContent = users ?? 0;
         if (subscribersEl) subscribersEl.textContent = subscribers ?? 0;
     };
 
-    document.addEventListener('DOMContentLoaded', async () => {
+    async function initializeAuth() {
         if (!configured()) {
-            console.warn('Supabase is not configured. The app will not treat localStorage as authentication.');
+            console.warn('Supabase is not configured. LocalStorage is not treated as authentication.');
             return;
         }
-
         try {
             await loadSupabaseSdk();
             client = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
             window.domislinkSupabase = client;
-
-            client.auth.onAuthStateChange((_event, session) => {
-                // Defer database work so auth callbacks stay lightweight.
-                setTimeout(() => applySession(session), 0);
-            });
-
+            client.auth.onAuthStateChange((_event, session) => setTimeout(() => applySession(session), 0));
             const { data } = await client.auth.getSession();
             await applySession(data.session);
         } catch (error) {
             console.error('Authentication initialization failed:', error);
             showToast('Authentication service could not be initialized.');
         }
-    });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initializeAuth, { once: true });
+    } else {
+        initializeAuth();
+    }
 })();
